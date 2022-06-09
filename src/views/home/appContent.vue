@@ -291,6 +291,7 @@
       /* var video = document.getElementById('video');
       video.play();
       console.info(video) */
+      
     },
     methods: {
       show(v) {

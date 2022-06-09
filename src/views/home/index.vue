@@ -31,7 +31,6 @@
       getType() {
         var html = document.documentElement;
         var width = html.getBoundingClientRect().width || window.innerWidth;
-        console.log(document.body.clientWidth ,'==========--0099')
         if (width > 750) {
           this.isPcShow = true
           this.isAppShow = false

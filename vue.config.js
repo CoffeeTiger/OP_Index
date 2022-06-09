@@ -14,19 +14,19 @@ module.exports = {
         assets: resolveSrc('src/assets')
       }
     },
-    /* plugins: [
+    plugins: [
       new PrerenderSPAPlugin({
         staticDir: path.join(__dirname, 'dist'),
-        routes: ['/','/index'],
-        renderer: new Renderer({
+        routes: ['/'],
+        /* renderer: new Renderer({
           inject: {
             foo: 'bar'
           },
           headless: false,
           renderAfterDocumentEvent: 'render-event'
-        }),
+        }), */
       })
-    ] */
+    ]
   },
   css: {
     //sourceMap: process.env.NODE_ENV !== 'production'

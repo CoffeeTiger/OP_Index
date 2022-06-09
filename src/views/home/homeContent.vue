@@ -8,13 +8,13 @@
           </p>
         </div>
         <div class="ishares">
-          <a href="https://t.me/openpublishTGcn" target="_blank"><img src="../../assets/imgs/news/tg.svg" class="ihome-share" /></a>
-          <a href="https://twitter.com/OpenPublishNFT" target="_blank"><img src="../../assets/imgs/news/Twitter.svg" class="ihome-share" /></a>
-          <a href="https://discord.gg/openpublish" target="_blank"><img src="../../assets/imgs/news/xiaoren.svg" class="ihome-share" /></a>
-          <a href="https://www.youtube.com/c/Openpublish" target="_blank"><img src="../../assets/imgs/news/yb.svg" class="ihome-share" /></a>
+          <a target="_blank"><img src="../../assets/imgs/news/tg.svg" class="ihome-share" /></a>
+          <a target="_blank"><img src="../../assets/imgs/news/Twitter.svg" class="ihome-share" /></a>
+          <a target="_blank"><img src="../../assets/imgs/news/xiaoren.svg" class="ihome-share" /></a>
+          <a target="_blank"><img src="../../assets/imgs/news/yb.svg" class="ihome-share" /></a>
         </div>
         <div class="imore">
-          <a href="" target="_blank">
+          <a target="_blank">
             <span class="imore-desc">{{$t('page.learnmoreaboutOpenPublish')}}</span>
             <img src="../../assets/imgs/arrow-right.png" class="ihome-more" />
           </a>
@@ -265,10 +265,16 @@
     },
     methods: {
       show(v) {
-        let contentDiv = document.getElementsByClassName("ibody-open");
+        // let contentDiv = document.getElementsByClassName("ibody-open");
+        // if (parseInt(contentDiv[v].style.height) != contentDiv[v].scrollHeight) {
+        //   contentDiv[v].style.height = contentDiv[v].scrollHeight + "px";
+        // } else {
+        //   contentDiv[v].style.height = "0px";
+        // }
 
         if (v == 1) {
           this.open1 = !this.open1
+
         } else if (v == 2) {
           this.open2 = !this.open2
         } else if (v == 3) {
@@ -278,21 +284,6 @@
         } else if (v == 5) {
           this.open5 = !this.open5
         }
-        // for (var i = 0; i < contentDiv.length; i++) {
-        //   if (parseInt(contentDiv[i].style.height) != contentDiv[i].scrollHeight) {
-        //     contentDiv[i].style.height = contentDiv[i].scrollHeight + "px";
-        //   } else {
-        //     contentDiv[i].style.height = "0px";
-        //   }
-        //   for (let j = 0; j < contentDiv.length; j++) {
-        //     if (j !== i) {
-        //       contentDiv[j].style.height = "0px";
-        //     }
-        //   }
-        // }
-
-
-
       }
     }
   }
@@ -716,7 +707,7 @@
 
   .ibody-open {
     width: 100%;
-    height: 0;
+    /* height: 23.8888rem; */
     /* min-height: 9.6rem;
 		transition: min-height .5s; */
     background: #3a3a3a;
@@ -727,7 +718,7 @@
 
   .ibody-open-v2 {
     width: 100%;
-    /*   height: 15.8888rem; */
+    height: 15.8888rem;
     /* min-height: 9.6rem;
   	transition: min-height .5s; */
     background: #3a3a3a;

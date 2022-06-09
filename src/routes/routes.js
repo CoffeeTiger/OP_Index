@@ -9,7 +9,7 @@ const routes = [
       name: 'index',
       // component: () => import('../views/home/homeContent.vue')
       component: () => import('../views/home/index.vue')
-    }, {
+    },/* {
       path: '/homepage',
       name: 'homepage',
       component: () => import('../views/home/homePage.vue')
@@ -29,8 +29,7 @@ const routes = [
       component: () => import('../views/home/HomeIndex.vue')
     }, {
       path: '/profile',
-      meta:{name:'profile', requiresAuth: true},
-      /* redirect:'original', */
+      meta:{name:'profile', requiresAuth: true}, 
       component: () => import('@/views/user/profile.vue'),
       children:[
         {
@@ -38,11 +37,7 @@ const routes = [
           name: 'original',
           meta:{name:'original', requiresAuth: true},
           component: () => import('@/views/user/original.vue')
-        },/* {
-          path: '/collected',
-          name: 'collected',
-          component: () => import('@/views/user/collected.vue')
-        }, */{
+        },{
           path: '/activity',
           name: 'activity',
           meta:{name:'activity', requiresAuth: true},
@@ -147,7 +142,7 @@ const routes = [
       name: 'detail',
       meta:{name:'detail', requiresAuth: false},
       component: () => import('@/views/user/detail.vue'),
-    },
+    }, */
     // {
     // path: '*',
     // component: () => import('@/views/notFoundPage.vue'),

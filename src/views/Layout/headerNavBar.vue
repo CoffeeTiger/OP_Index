@@ -3,7 +3,7 @@
     <b-navbar toggleable="lg" class="ib-navbar ib-navbar-Purple" fixed="top">
       <div class="inavbar-contain">
 
-        <b-navbar-brand class="open" >
+        <b-navbar-brand class="open">
           <h2>Open<span>Publish</span></h2>
         </b-navbar-brand>
 
@@ -38,12 +38,12 @@
 
         </b-collapse>
         <div class="menu-btn" @click="btnClick">
-          <img src="../../assets/imgs/appnews/list.png" />
+          <img src="../../assets/imgs/appnews/list.svg" />
         </div>
         <div v-if="menuShow" class="menu-ul-u2">
           <ul>
             <li>
-              <router-link class="menu-rotlink" to="" >For partners</router-link>
+              <router-link class="menu-rotlink" to="">For partners</router-link>
             </li>
             <li>
               <router-link class="menu-rotlink" to="">Reward</router-link>
@@ -57,12 +57,12 @@
             <li>
               <router-link class="menu-rotlink" to="">About</router-link>
             </li>
-            <li style="border: none;">
-              <router-link class="menu-rotlink" to="">EnterApp</router-link>
+            <li style="border: none;" class="menu-rotlink">
+              <!-- <router-link class="menu-rotlink" to=""> -->
+                <a href="https://m.openpublish.io" target="_blank">EnterApp</a>
             </li>
           </ul>
         </div>
-
       </div>
     </b-navbar>
   </div>
@@ -88,6 +88,11 @@
       }
     },
     mounted() {
+      document.addEventListener('click',e=>{
+        if(!this.$el.contains(e.target)){
+          this.menuShow = false
+        }
+      })
       ebus.$on('emsg', (res) => {
         if (res == 'relogin') {
           this.propertyIsOk()
@@ -105,6 +110,9 @@
       },
       title(v) {
         this.titlechk = v
+        if (v == 6) {
+          location.href = 'https://app.openpublish.io'
+        }
       },
       profile() {
         this.titlechk = 0
@@ -479,7 +487,7 @@
       align-items: center;
     }
 
-   .menu-rotlink {
+    .menu-rotlink {
       font-size: 1.625rem;
       font-family: Poppins-Regular, Poppins;
       font-weight: 400;
@@ -490,10 +498,10 @@
 
     .menu-btn {
       display: block;
-      width: 34px;
+      width: 2.375rem;
       margin-right: 1.9375rem;
       position: absolute;
-      top: 1.875rem;
+      top: 2.4rem;
       right: 0rem;
       /* height: 31px; */
     }
