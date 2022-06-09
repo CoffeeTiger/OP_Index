@@ -1,0 +1,156 @@
+.inavigation {
+  width: 100%;
+  margin: 7.3888rem 0 2.6666rem;
+}
+.inavigation .inavi-contant{
+  font-size: 1.5555rem;
+  font-weight: 400;
+  color: #979797;
+
+  font-family: Poppins-Regular, Poppins;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inavigation .inavi-contant .navi-item {
+  width: 33.3%;
+  line-height: 2.2222rem;
+  padding: 0 0 2.4444rem;
+  /* border-bottom: 0.3333rem solid #F7B62D00; */
+  text-align: center;
+}
+
+.inavigation .inavi-contant .navi-active {
+  /* border-bottom: 0.3333rem solid #F7B62D; */
+  font-family: Poppins-Medium, Poppins;
+  color: #FFFFFF;
+  transition: all .3s ease-in-out 0.1s;
+}
+.inavigation .inavi-slider{
+  width: 100%;
+  height: 0.4444rem;
+  border-bottom: 0.1111rem solid #3F4142;
+  overflow: hidden;
+}
+.inavigation .inavi-slider .islider{
+  width: 22.2222rem;
+  height: 0.3333rem;
+  background: #F7B62D;
+  transition: transform .3s ease-in-out 0.1s;
+}
+
+.iprofileimg-contain {
+  width: 21.3333rem;
+  height: 28.1111rem;
+  margin: 0 auto 1.3333rem;
+  border: 0.1111rem solid #3F4142;
+  border-radius: 1.1666rem;
+  padding: 1.5555rem 1.7222rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+}
+
+.iprofileimg-contain:hover {
+  filter: brightness(0.96);
+}
+
+.iprofileimg {
+  width: 17.8888rem;
+  height: 19.3888rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.8888rem;
+  overflow: hidden;
+}
+
+.iprofileimg-contain .ip-img {
+  width: 100%;
+  height: auto;
+}
+
+.iprofileimg-contain .ip-content {
+  width: 100%;
+  margin: 1.3333rem auto;
+  color: #979797;
+}
+
+.iprofileimg-contain .ip-content .ip-name {
+  width: 100%;
+  line-height: 2.1666rem;
+  font-size: 1.5555rem;
+  font-family: Poppins-Medium, Poppins;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.iprofileimg-contain .ip-content .ip-value {
+  width: 100%;
+  line-height: 2rem;
+  font-size: 1.4444rem;
+  font-weight: 300;
+  font-family: Poppins-Light, Poppins;
+  margin-top: 0.1111rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.iprofileimg-contain .ip-content .ip-value .ivalue {
+  /* color: #3b3b3b; */
+}
+
+/* v2 */
+.istatus {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.istatus .istatus-imgs {
+  padding: 2.4444rem 0 0 2.6666rem;
+}
+
+.istatus .istatus-imgs .lucker-img {
+  width: 8.3333rem;
+  height: 3.6666rem;
+}
+
+.istatus .istatus-imgs .rewarded-img {
+  width: 8.9444rem;
+  height: 3.5rem;
+}
+
+.istatus .itimes {
+  padding: 2.4444rem 0 0 2.6666rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.istatus .itimes .itimer-cell {
+  width: 2.7222rem;
+  height: 2.6666rem;
+  line-height: 2.3888rem;
+  border: 0.1666rem solid #3F4142;
+  border-radius: 0.4444rem;
+  background: #FFFFFF;
+  font-size: 1.7777rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.istatus .itimes .itimer-dots {
+  width: 0.3333rem;
+  margin: 0 0.6666rem;
+}
+
+.iovertime {
+  color: #979797;
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+        <loc>https://openpublish.io</loc>
+        <changefreq>daily</changefreq>
+  </url>
+  <url>
+        <loc>https://openpublish.io/rewards</loc>
+        <changefreq>daily</changefreq>
+  </url>
+  <url>
+        <loc>https://openpublish.io/bond</loc>
+        <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+        <loc>https://openpublish.io/swap</loc>
+        <changefreq>daily</changefreq>
+  </url>
+  <url>
+        <loc>https://openpublish.io/create</loc>
+        <changefreq>daily</changefreq>
+  </url>  
+  <url>
+	<loc>https://www.openpublish.io</loc>
+	<changefreq>daily</changefreq>		  
+  </url>
+  <url>
+	<loc>https://www.openpublish.io/rewards</loc>
+        <changefreq>daily</changefreq>	
+  </url>
+  <url>
+        <loc>https://www.openpublish.io/bond</loc>
+        <changefreq>daily</changefreq>
+  </url>
+  <url>
+	<loc>https://www.openpublish.io/swap</loc>
+	<changefreq>daily</changefreq>
+  </url>
+  <url>
+	<loc>https://www.openpublish.io/create</loc>
+	<changefreq>daily</changefreq>
+  </url>
+</urlset>

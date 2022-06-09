@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="26px" viewBox="0 0 16 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 2</title>
+    <g id="网站深色版" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3-nfts" transform="translate(-378.000000, -595.000000)" fill-rule="nonzero">
+            <g id="编组-14" transform="translate(362.000000, 142.000000)">
+                <g id="编组-2" transform="translate(16.257409, 453.152941)">
+                    <polygon id="路径" fill="#C9D2FA" points="7.62066044 0 7.44824733 0.57849744 7.44824733 17.3681506 7.62066044 17.5383488 15.2413209 12.9315339"></polygon>
+                    <polygon id="路径" fill="#F4F4F4" points="7.62066044 0 0 12.9315339 7.62066044 17.5383488 7.62066044 9.38911906"></polygon>
+                    <polygon id="路径" fill="#C9D2FA" points="7.62066044 19.0136936 7.52583324 19.1309804 7.52583324 25.1117267 7.62066044 25.3921569 15.2413209 14.4095243"></polygon>
+                    <polygon id="路径" fill="#F4F4F4" points="7.62066044 25.391275 7.62066044 19.0136936 0 14.4095243"></polygon>
+                    <polygon id="路径" fill="#8FA1F4" points="7.62066044 17.5383488 15.2413209 12.9315339 7.62066044 9.38911906"></polygon>
+                    <polygon id="路径" fill="#C9D2FA" points="0 12.9315339 7.62066044 17.5383488 7.62066044 9.38911906"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
