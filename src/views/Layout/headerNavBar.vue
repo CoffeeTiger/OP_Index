@@ -3,39 +3,38 @@
     <b-navbar toggleable="lg" class="ib-navbar ib-navbar-Purple" fixed="top">
       <div class="inavbar-contain">
 
-        <b-navbar-brand class="open">
+        <b-navbar-brand href="/" class="open">
           <h2>Open<span>Publish</span></h2>
         </b-navbar-brand>
 
         <!--  <b-navbar-toggle target="nav-collapse"></b-navbar-toggle> -->
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
-            <b-nav-item class="inav-item" @click="title(1)">
-              <span class=" nav-link-inner--text i-nav-link-font" :class="titlechk==1?'i-nav-link-font-check':''">For
+            <b-nav-item to="/forParters" class="inav-item" @click="title(1)">
+              <span class="nav-link-inner--text i-nav-link-font" :class="titlechk==1?'i-nav-link-font-check':''">For
                 partners</span>
             </b-nav-item>
             <b-nav-item class="inav-item" @click="title(2)">
-              <span class=" nav-link-inner--text i-nav-link-font"
+              <span class="nav-link-inner--text i-nav-link-font"
                 :class="titlechk==2?'i-nav-link-font-check':''">Reward</span>
             </b-nav-item>
             <b-nav-item class="inav-item" @click="title(3)">
-              <span class=" nav-link-inner--text i-nav-link-font"
+              <span class="nav-link-inner--text i-nav-link-font"
                 :class="titlechk==3?'i-nav-link-font-check':''">FAQ</span>
             </b-nav-item>
             <b-nav-item class="inav-item" @click="title(5)">
-              <span class=" nav-link-inner--text i-nav-link-font"
+              <span class="nav-link-inner--text i-nav-link-font"
                 :class="titlechk==5?'i-nav-link-font-check':''">Blog</span>
             </b-nav-item>
-            <b-nav-item class="inav-item" @click="title(4)">
-              <span class=" nav-link-inner--text i-nav-link-font"
+            <b-nav-item to="/about" class="inav-item" @click="title(4)">
+              <span class="nav-link-inner--text i-nav-link-font"
                 :class="titlechk==4?'i-nav-link-font-check':''">About</span>
             </b-nav-item>
-            <b-nav-item class="inav-item" @click="title(6)">
-              <span class=" nav-link-inner--text i-nav-link-font"
+            <b-nav-item href="https://app.openpublish.io" target="_blank" class="inav-item" @click="title(6)">
+              <span class="nav-link-inner--text i-nav-link-font"
                 :class="titlechk==6?'i-nav-link-font-check':''">EnterApp</span>
             </b-nav-item>
           </b-navbar-nav>
-
         </b-collapse>
         <div class="menu-btn" @click="btnClick">
           <img src="../../assets/imgs/appnews/list.svg" />
@@ -43,7 +42,7 @@
         <div v-if="menuShow" class="menu-ul-u2">
           <ul>
             <li>
-              <router-link class="menu-rotlink" to="">For partners</router-link>
+              <router-link class="menu-rotlink" to="/forParters">For partners</router-link>
             </li>
             <li>
               <router-link class="menu-rotlink" to="">Reward</router-link>
@@ -55,11 +54,11 @@
               <router-link class="menu-rotlink" to="">Blog</router-link>
             </li>
             <li>
-              <router-link class="menu-rotlink" to="">About</router-link>
+              <router-link class="menu-rotlink" to="/about">About</router-link>
             </li>
             <li style="border: none;" class="menu-rotlink">
               <!-- <router-link class="menu-rotlink" to=""> -->
-                <a href="https://m.openpublish.io" target="_blank">EnterApp</a>
+              <a href="https://m.openpublish.io" target="_blank">EnterApp</a>
             </li>
           </ul>
         </div>
@@ -88,8 +87,8 @@
       }
     },
     mounted() {
-      document.addEventListener('click',e=>{
-        if(!this.$el.contains(e.target)){
+      document.addEventListener('click', e => {
+        if (!this.$el.contains(e.target)) {
           this.menuShow = false
         }
       })
@@ -110,9 +109,6 @@
       },
       title(v) {
         this.titlechk = v
-        if (v == 6) {
-          location.href = 'https://app.openpublish.io'
-        }
       },
       profile() {
         this.titlechk = 0

@@ -9,17 +9,14 @@
 
     <div class="main_contain">
       <div class="ihome-share">
-        
-        <a href="https://t.me/openpublishTGcn" target="_blank"><img src="../../assets/imgs/appnews/home-top-tg2.png" class="ishare-img" /></a>
-        <a href="https://twitter.com/OpenPublishNFT" target="_blank"><img src="../../assets/imgs/appnews/home-top-tw2.png" class="ishare-img ishare-img-middle" /></a>
-        <a href="https://discord.gg/openpublish" target="_blank"><img src="../../assets/imgs/appnews/home-top-dis2.png" class="ishare-img" /></a>
-        <a href="https://www.youtube.com/c/Openpublish" target="_blank"><img src="../../assets/imgs/news/yb.svg" class="ishare-img" style="margin-left: 2.3125rem;" /></a>
-        
-        <!-- <img src="../../assets/imgs/appnews/home-top-tg2.png" class="ishare-img" />
-        <img src="../../assets/imgs/appnews/home-top-tw2.png" class="ishare-img ishare-img-middle" />
-        <img src="../../assets/imgs/appnews/home-top-dis2.png" class="ishare-img" />
-        <img src="../../assets/imgs/news/yb.svg" class="ishare-img" style="margin-left: 2.3125rem;" /> -->
- 
+        <a href="https://t.me/openpublishTGcn" target="_blank"><img src="../../assets/imgs/appnews/home-top-tg2.png"
+            class="ishare-img" /></a>
+        <a href="https://twitter.com/OpenPublishNFT" target="_blank"><img
+            src="../../assets/imgs/appnews/home-top-tw2.png" class="ishare-img ishare-img-middle" /></a>
+        <a href="https://discord.gg/openpublish" target="_blank"><img src="../../assets/imgs/appnews/home-top-dis2.png"
+            class="ishare-img" /></a>
+        <a href="https://www.youtube.com/c/Openpublish" target="_blank"><img src="../../assets/imgs/news/yb.svg"
+            class="ishare-img" style="margin-left: 2.3125rem;" /></a>
       </div>
       <div class="ihome-docs">
         <a href="https://wiki.openpublish.io" target="_blank">
@@ -31,22 +28,21 @@
       <div class="ihome-road-contain">
         <div class="iroad-title color_yellow">ROADMAP</div>
         <div class="roadmap">
-          <div class="roadmap-item align-bottom" style="--i: 1">
+          <div class="roadmap-item align-top" style="--i: 1">
             <h3>2022/04/08</h3>
-            <p>OP Official</p>
-            <p>Discord Launch</p>
+            <span class="ipCon">OP Official Discord Launch</span>
           </div>
-          <div class="roadmap-item align-bottom" style="--i: 4">
+          <div class="roadmap-item align-top" style="--i: 4">
             <h3>2022/06/16</h3>
-            <p>“OP Alpha” Online</p>
+            <span class="ipCon">“OP Alpha” Online</span>
           </div>
-          <div class="roadmap-item align-bottom" style="--i: 7">
+          <div class="roadmap-item align-top" style="--i: 7">
             <h3>2022/08/10</h3>
-            <p>OP ILO Launch</p>
+            <span class="ipCon">OP ILO Launch</span>
           </div>
-          <div class="roadmap-item align-bottom" style="--i: 10">
+          <div class="roadmap-item align-top" style="--i: 10">
             <h3>2022/08/10</h3>
-            <p>OP ILO Launch</p>
+            <span class="ipCon">OP ILO Launch</span>
           </div>
           <div class="roadmap-item" style="--i: 2">
             <img src="../../assets/imgs/news/1.svg" alt="" />
@@ -60,19 +56,19 @@
           <div class="roadmap-item" style="--i: 11">
             <img src="../../assets/imgs/news/4.svg" alt="" />
           </div>
-          <div class="roadmap-item align-top" style="--i: 3">
+          <div class="roadmap-item align-bottom" style="--i: 3">
             <h3>2022/04/16</h3>
-            <p>OP Official SiteLaunch</p>
+            <span class="ipCon">OP Official SiteLaunch</span>
           </div>
-          <div class="roadmap-item align-top" style="--i: 6">
+          <div class="roadmap-item align-bottom" style="--i: 6">
             <h3>2022/07/16</h3>
-            <p>“OP Beta” Online</p>
+            <span class="ipCon">“OP Beta” Online</span>
           </div>
-          <div class="roadmap-item align-top" style="--i: 9">
+          <div class="roadmap-item align-bottom" style="--i: 9">
             <h3>2022/08/16</h3>
-            <p style="margin-left: 5px;">OP V1 Launch</p>
+            <span class="ipCon" style="margin-left: 5px;">OP V1 Launch</span>
           </div>
-          <div class="roadmap-item align-top" style="--i: 12"></div>
+          <div class="roadmap-item align-bottom" style="--i: 12"></div>
         </div>
       </div>
 
@@ -291,7 +287,7 @@
       /* var video = document.getElementById('video');
       video.play();
       console.info(video) */
-      
+
     },
     methods: {
       show(v) {
@@ -318,6 +314,10 @@
 </script>
 
 <style scoped>
+  .ipCon {
+    font-size: 2.125rem;
+  }
+
   .faq-list {
     font-size: 2rem;
     font-family: var(--index-family);
@@ -334,7 +334,7 @@
 
   .faq-find {
     width: 100%;
-    font-size: 1.25rem;
+    font-size: 1.625rem;
     font-family: Poppins-Medium, Poppins;
     font-weight: 500;
     color: #FFFFFF;
@@ -343,28 +343,35 @@
 
   .roadmap {
     position: relative;
-    width: calc(100% - 160px);
-    margin: 0 80px;
+    width: calc(100% - 20rem);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+    grid-gap: 0.625rem;
     justify-content: center;
+    margin-left: 8.25rem;
+    margin-right: 11.75rem;
   }
 
   .roadmap .roadmap-item.align-bottom {
     display: flex;
     align-items: flex-start;
-    justify-content: flex-end;
-    flex-direction: column;
-    margin-left: 20px;
-  }
-
-  .roadmap .roadmap-item.align-top {
-    display: flex;
-    align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    margin-right: 20px;
+    margin-right: 1.25rem;
+    padding-left: 4.375rem;
+  }
+
+  /* .roadmap .roadmap-item.align-bottom h3,
+  .roadmap .roadmap-item.align-bottom span {
+    align-self: center;
+  }
+ */
+  .roadmap .roadmap-item.align-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-left: 1.25rem;
   }
 
   .roadmap .roadmap-item h3 {
@@ -376,8 +383,7 @@
     line-height: 3.4375rem;
   }
 
-  .roadmap.roadmap-item p {
-    font-size: 2.125rem;
+  .roadmap.roadmap-item span {
     font-family: Poppins-Regular, Poppins;
     font-weight: 400;
     color: #949494;
@@ -402,7 +408,7 @@
 
   .ihome-top {
     width: 100%;
-    margin: 7.25rem auto 0;
+    margin: 7rem auto 0;
   }
 
   .ihome-top .itopbanner-img {
@@ -416,7 +422,7 @@
     font-weight: bold;
     line-height: 3.875rem;
     text-align: center;
-    margin: 4.5rem auto 0;
+    margin: 2.3rem auto 0;
   }
 
   .ihome-share {
@@ -752,6 +758,12 @@
 
     .roadmap-item {
       grid-row: var(--i);
+    }
+    .align-bottom{
+      margin-bottom: 9.25rem;
+    }
+    .roadmap-item:last-child{
+      margin-bottom: 0;
     }
   }
 </style>

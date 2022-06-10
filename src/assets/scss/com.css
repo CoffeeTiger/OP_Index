@@ -185,15 +185,13 @@ select option:checked {
 }
 
 .icontainer-subpage {
-  /* width: -webkit-calc(100% - 3.555555rem);
-   margin: 0 1.777777rem;*/
   width: -webkit-calc(100% - 2.777777rem);
   margin: 0 1.388888rem;
   padding: 1rem 0;
 }
 
 .main-content {
-  max-width: var(--max-width);
+  /* max-width: var(--max-width); */
   width: 100%;
   margin: 0 auto;
   overflow-x: hidden;
@@ -206,7 +204,6 @@ select option:checked {
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center top;
-  /* background-position: 140% -10%; */
   position: absolute;
   opacity: 0.6;
   top: 5.555555rem;
@@ -214,25 +211,21 @@ select option:checked {
 
 .show-contain {
   position: relative;
+  max-width: --max-width;
   margin: 4.5555rem auto 0 auto;
-  /* max-width: 90rem;
-  ;
-  min-height: calc(100vh - 10rem); */
+  min-height: calc(100vh - 10rem);
 }
 
 @media only screen and (min-width: 0px) and (max-width: 992px) {
   .show-contain {
     position: relative;
     margin: 3.5rem auto 0 auto;
-    /* max-width: 90rem; */
-    /* min-height: calc(100vh - 10rem); */
   }
 }
 
 
 .irow {
   margin: 0 auto;
-  /* padding: 1rem 0; */
 }
 
 .iform-control-lg {

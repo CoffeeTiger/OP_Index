@@ -1,0 +1,318 @@
+<template>
+  <div class="forparters">
+    <div class="forparters-head">
+      <div class="forparters-head-left">
+        <div class="forparters-size">
+          <p>What we </p>
+          <p>can offer</p>
+        </div>
+        <div class="forparters-img">
+          <img src="../../assets/imgs/home-logo.png" />
+        </div>
+      </div>
+      <div class="forparters-head-right">
+        <div class="forparters-head-content">
+          <div class="forparters-head-title">Motivated user base</div>
+          <p>An engaged audience that’s eager to earn money by completing microtasks, employing their nfts, or in
+            other similar ways.</p>
+          <p></p>
+          <br>
+          <p></p>
+          <div class="forparters-head-title">Global coverage</div>
+          <p>Users from 150+ countries all around the world, representing various age groups and market segments.</p>
+          <p></p>
+          <br>
+          <p></p>
+          <div class="forparters-head-title">Account management</div>
+          <p>Custom service that’s personalized according to the individual needs of each business partner.</p>
+          <p></p>
+          <br>
+          <p></p>
+          <div class="forparters-head-title">Payment flexibility</div>
+          <p>A chance to offer payments in cryptocurrency that provides extra benefits over opensea, including fast
+            transactions with much lower fees.</p>
+        </div>
+      </div>
+    </div>
+    <div class="forparters-bottom">
+      <div class="forparters-bottom-left">
+        <p>Let's</p>
+        <p>Work</p>
+        <p>Together</p>
+      </div>
+      <div class="forparters-app">
+        <p>Let's Work</p>
+        <p>Together</p>
+      </div>
+      <div class="forparters-bottom-right">
+        <div class="forparters-list">
+          <div>
+            <div>First Name*</div>
+            <div class="forparters-list-input">
+              <input />
+            </div>
+          </div>
+          <div>
+            <div>Last Name*</div>
+            <div class="forparters-list-input">
+              <input />
+            </div>
+          </div>
+        </div>
+        <div class="forparters-list" style="padding-top: 2.875rem;">
+          <div>
+            <div>Email*</div>
+            <div class="forparters-list-input">
+              <input />
+            </div>
+          </div>
+          <div>
+            <div>Company*</div>
+            <div class="forparters-list-input">
+              <input />
+            </div>
+          </div>
+        </div>
+        <div class="forparters-list" style="padding-top: 2.875rem;">
+          <div>
+            <div>Write a message*</div>
+            <div class="forparters-list-textarea">
+              <textarea cols='270' rows="3" />
+            </div>
+          </div>
+        </div>
+        <div class="forparters-btn">
+          <div>Submit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+</script>
+
+<style scoped="scoped">
+  .forparters-list-textarea {
+    width: 36.25rem;
+    margin-right: 0rem;
+  }
+
+  .forparters-list-textarea>textarea {
+    width: 100%;
+    margin-top: 3.75rem;
+    border-bottom: 0.0625rem solid #313131;
+  }
+
+  .forparters-btn {
+    margin-top: 1.875rem;
+    width: 11.0625rem;
+    height: 3.125rem;
+    background: #F7B62D;
+    border-radius: 0.625rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3.75rem;
+  }
+
+  .forparters-btn>div {
+    font-size: 1.25rem;
+    font-family: Poppins-Bold, Poppins;
+    font-weight: 600;
+    color: #313131;
+    line-height: 1.875rem;
+  }
+
+  .forparters-list-input {
+    width: 16.875rem;
+    margin-right: 2.5rem;
+  }
+
+  .forparters-list-input>input {
+    width: 100%;
+    margin-top: 3.75rem;
+    border-bottom: 0.0625rem solid #313131;
+  }
+
+  .forparters-list {
+    padding-top: 6.625rem;
+    display: flex;
+  }
+
+  .forparters-app {
+    display: none;
+  }
+
+  .forparters-bottom-left>p {
+    font-size: 4.375rem;
+    font-family: Poppins-Bold, Poppins;
+    font-weight: bold;
+    color: #121619;
+    line-height: 4.75rem;
+    margin-right: 9.9375rem;
+  }
+
+  .forparters-bottom-right {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2.5rem;
+    font-family: Poppins-Bold, Poppins;
+    color: #313131;
+  }
+
+  .forparters-bottom-left {
+    display: block;
+    width: 40%;
+    padding-left: 12.125rem;
+    margin-top: 6.3125rem;
+  }
+
+  .forparters-bottom {
+    margin: 2.875rem 2.875rem 0;
+    background-color: #ffffff;
+    width: calc(100% - 5.75rem);
+    display: flex;
+  }
+
+  .forparters-head-title {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    font-weight: 600;
+  }
+
+  .forparters-head-content {
+    margin-top: 5.1875rem;
+    color: #313131;
+  }
+
+  .forparters-head-content>p {
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+  }
+
+  .forparters-img {
+    margin: 10.875rem 4.3125rem;
+  }
+
+  .forparters-img>img {
+    width: 100%;
+    height: 100%;
+    margin-left: 5rem;
+    margin-bottom: 4.1875rem;
+  }
+
+  .forparters-size {
+    margin-bottom: 4.3125rem;
+    margin-top: 4.3125rem;
+  }
+
+  .forparters-size>p {
+    font-size: 4.375rem;
+    font-family: Poppins-Bold, Poppins;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 4.75rem;
+  }
+
+  .forparters {
+    background-color: #F7B62D;
+    margin-top: 6.6rem;
+    padding: 2.875rem 0;
+  }
+
+  .forparters-head {
+    width: 100%;
+    display: flex;
+  }
+
+  .forparters-head-left {
+    width: 40%;
+    background-color: #121619;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    padding-left: 15rem;
+  }
+
+  .forparters-head-right {
+    width: 60%;
+    background-color: #ffffff;
+    padding-left: 2.5rem;
+    padding-right: 28.4375rem
+  }
+
+  @media only screen and (min-width: 0px) and (max-width: 750px) {
+    .forparters-size>p {
+      font-size: 4.375rem;
+      font-family: Poppins-Bold, Poppins;
+      font-weight: bold;
+      color: #FFFFFF;
+      line-height: 5.75rem;
+    }
+
+    .forparters-img>img {
+      margin-left: 0rem;
+    }
+
+    .forparters {
+      padding-top: 0;
+    }
+
+    .forparters-head {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .forparters-head-left {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-left: 0rem;
+    }
+
+    .forparters-head-right {
+      width: 100%;
+      background-color: #ffffff;
+      padding-left: 1.875rem;
+      padding-right: 1.875rem
+    }
+
+    .forparters-head-content {
+      color: #313131;
+      margin: 2.5rem 0rem;
+    }
+
+
+
+    .forparters-bottom {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .forparters-app {
+      display: block;
+      justify-content: center;
+      align-items: center;
+      padding-left: 0rem;
+      margin-top: 6.3125rem;
+      text-align: center;
+    }
+
+    .forparters-app>p {
+      font-size: 4.375rem;
+      font-family: Poppins-Bold, Poppins;
+      font-weight: bold;
+      color: #121619;
+      line-height: 4.75rem;
+      margin-right: 0rem;
+    }
+
+    .forparters-bottom-left {
+      display: none;
+    }
+  }
+</style>

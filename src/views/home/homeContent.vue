@@ -8,13 +8,13 @@
           </p>
         </div>
         <div class="ishares">
-          <a target="_blank"><img src="../../assets/imgs/news/tg.svg" class="ihome-share" /></a>
-          <a target="_blank"><img src="../../assets/imgs/news/Twitter.svg" class="ihome-share" /></a>
-          <a target="_blank"><img src="../../assets/imgs/news/xiaoren.svg" class="ihome-share" /></a>
-          <a target="_blank"><img src="../../assets/imgs/news/yb.svg" class="ihome-share" /></a>
+          <a href="https://t.me/openpublishTGcn" target="_blank"><img src="../../assets/imgs/news/tg.svg" class="ihome-share" /></a>
+          <a href="https://twitter.com/OpenPublishNFT" target="_blank"><img src="../../assets/imgs/news/Twitter.svg" class="ihome-share" /></a>
+          <a href="https://discord.gg/openpublish" target="_blank"><img src="../../assets/imgs/news/xiaoren.svg" class="ihome-share" /></a>
+          <a href="https://www.youtube.com/c/Openpublish" target="_blank"><img src="../../assets/imgs/news/yb.svg" class="ihome-share" /></a>
         </div>
         <div class="imore">
-          <a target="_blank">
+          <a href="https://wiki.openpublish.io" target="_blank">
             <span class="imore-desc">{{$t('page.learnmoreaboutOpenPublish')}}</span>
             <img src="../../assets/imgs/arrow-right.png" class="ihome-more" />
           </a>

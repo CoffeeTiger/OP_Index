@@ -1,6 +1,6 @@
 <template>
   <!-- <div class="b-container"> -->
-  <div class="main-content ">
+  <div class="main-content">
     <headerNavBar></headerNavBar>
     <div class="show-contain">
       <FadeTransition :duration="200" mode="out-in">

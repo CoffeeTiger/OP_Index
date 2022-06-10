@@ -9,7 +9,23 @@ const routes = [
       name: 'index',
       // component: () => import('../views/home/homeContent.vue')
       component: () => import('../views/home/index.vue')
-    },/* {
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('../views/about/about.vue')
+    },
+    {
+      path: '/forParters',
+      name: 'forParters',
+      component: () => import('../views/forParters/index.vue')
+    },
+    {
+      path: '/reward',
+      name: 'reward',
+      component: () => import('../views/reward/index.vue')
+    },
+    /* {
       path: '/homepage',
       name: 'homepage',
       component: () => import('../views/home/homePage.vue')
@@ -29,7 +45,7 @@ const routes = [
       component: () => import('../views/home/HomeIndex.vue')
     }, {
       path: '/profile',
-      meta:{name:'profile', requiresAuth: true}, 
+      meta:{name:'profile', requiresAuth: true},
       component: () => import('@/views/user/profile.vue'),
       children:[
         {

@@ -4,53 +4,53 @@
     <div class="irow-footer-content">
       <div class="copyright text-center text-lg-left text-white-60">
         <b-nav class="nav-footer " align="left">
-          <b-nav-item>
+          <b-nav-item href="https://wiki.openpublish.io" target="_blank">
             <div class="ib-nav-item-content">{{$t('page.docs')}}</div>
           </b-nav-item>
-          <b-nav-item>
+          <b-nav-item href="https://github.com/CoffeeTiger" target="_blank">
             <div class="ib-nav-item-content">{{$t('page.github')}}</div>
           </b-nav-item>
-          <b-nav-item>
+          <b-nav-item :to="{name:'userpriv'}">
             <div class="ib-nav-item-content">{{$t('page.privacyPolicy')}}</div>
           </b-nav-item>
         </b-nav>
       </div>
       <div class="copyright text-center text-lg-left text-white-60">
         <b-nav class="nav-footer " align="left">
-          <b-nav-item>
+          <b-nav-item :to="{name:'userservice'}">
             <div class="ib-nav-item-content">{{$t('page.termsofUse')}}</div>
           </b-nav-item>
-          <b-nav-item>
+          <b-nav-item href="https://openpublish.io">
             <div class="ib-nav-item-content">{{$t('page.NFTMarketplace')}}</div>
           </b-nav-item>
-          <b-nav-item>
+          <b-nav-item href="https://openpublish.io">
             <div class="ib-nav-item-content">{{$t('page.blockChain')}}</div>
           </b-nav-item>
         </b-nav>
       </div>
       <div class="copyright text-center text-lg-left text-white-60">
         <b-nav align="right">
-          <b-nav-item>
+          <b-nav-item href="https://t.me/+YC_Eo3UDdZIzNGZk" target="_blank">
             <div class="ib-nav-item-content">
               <!-- <b-img fluid class="ilogo-social" src="img/icons/logo/twitter.png"></b-img><span></span> -->
               <b-img fluid class="ilogo-social" :src="require('../../assets/imgs/news/tg-1.svg')"></b-img>
               <span></span>
             </div>
           </b-nav-item>
-          <b-nav-item>
+          <b-nav-item href="https://twitter.com/OpenPublishNFT" target="_blank">
             <div class="ib-nav-item-content">
               <!-- <b-img fluid class="ilogo-social" src="img/icons/logo/telegram.png"></b-img><span></span> -->
               <b-img fluid class="ilogo-social" :src="require('../../assets/imgs/news//Twitter-2.svg')"></b-img>
               <span></span>
             </div>
           </b-nav-item>
-          <b-nav-item>
+          <b-nav-item href="https://discord.gg/tKMbjCdVYf" target="_blank">
             <div class="ib-nav-item-content">
               <b-img fluid class="ilogo-social" :src="require('../../assets/imgs/news/Discord-2.svg')"></b-img>
               <span></span>
             </div>
           </b-nav-item>
-          <b-nav-item>
+          <b-nav-item href="https://discord.gg/tKMbjCdVYf" target="_blank">
             <div class="ib-nav-item-content">
               <b-img fluid class="ilogo-social" :src="require('../../assets/imgs/news/yb-2.svg')"></b-img>
               <span></span>
@@ -77,10 +77,12 @@
         </div>
       </div>
       <div class="barList-div" style="margin-top: 0px;justify-content: center;">
-        <img src="../../assets/imgs/news/tg-1.svg" />
-        <img src="../../assets/imgs/news/Twitter-2.svg" />
-        <img src="../../assets/imgs/news/Discord-2.svg" />
-        <img style="margin-right: 0px;" src="../../assets/imgs/news/yb-2.svg" />
+        <a href="https://t.me/openpublishTGcn" target="_blank"><img src="../../assets/imgs/news/tg-1.svg" /></a>
+        <a href="https://twitter.com/OpenPublishNFT" target="_blank"> <img
+            src="../../assets/imgs/news/Twitter-2.svg" /></a>
+        <a href="https://discord.gg/openpublish" target="_blank"><img src="../../assets/imgs/news/Discord-2.svg" /></a>
+        <a href="https://www.youtube.com/c/Openpublish"><img style="margin-right: 0px;"
+            src="../../assets/imgs/news/yb-2.svg" /></a>
       </div>
     </div>
     <div class="barList">
@@ -193,6 +195,7 @@
     .barList-reser {
       margin-top: 0.625rem;
     }
+
     .open h2 {
       margin-bottom: 0rem;
     }
