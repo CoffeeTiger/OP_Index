@@ -155,6 +155,7 @@
         </div>
       </div>
       <div class="ipanel-body1">
+
         <div class="icollapse imargin-bottom-24">
           <div :class="open1?'icollapse-title-contain':'icollapse-title-contain icollapse-title-contain-close'">
             <div class="icollapse-title" @click="show(1)">
@@ -245,6 +246,7 @@
             <div class="icontent">{{$t('page.faqBContant5')}}</div>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -263,6 +265,9 @@
         open5: false
       }
     },
+    created() {
+      console.info('create--0001')
+    },
     methods: {
       show(v) {
         // let contentDiv = document.getElementsByClassName("ibody-open");
@@ -271,6 +276,8 @@
         // } else {
         //   contentDiv[v].style.height = "0px";
         // }
+
+        console.info('create--0001 v=' + v)
 
         if (v == 1) {
           this.open1 = !this.open1
@@ -287,6 +294,9 @@
       }
     }
   }
+
+  var open1 = false,open2 = false,open3 = false,open4 = false,open5 = false;
+
 </script>
 
 <style scoped>
@@ -665,8 +675,8 @@
     border-radius: 0.8888rem;
     overflow: hidden;
     font-family: Poppins-Regular, Poppins;
-  }
-
+  } 
+  
   .icollapse .icollapse-title-contain {
     width: 100%;
     background-color: #252525;
