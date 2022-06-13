@@ -250,9 +250,19 @@ module.exports = {
     90006: 'OPH-90006:Please connect to MetaMask.',
     90007: 'OPH-90007:The wallet network has changed',
     90008: 'OPH-90008:copy successfully',
+
+    90101:'OPH-90101:Please Enter First Name',
+    90102:'OPH-90102:Please Enter Last Name',
+    90103:'OPH-90103:Please Enter Email',
+    90104:'OPH-90104:Please Enter Company Info',
+    90105:'OPH-90105:Please Enter messages',
+    90106:'OPH-90103:Please enter a valid email',
+    90107:'OPH-90103:Submit successfully',
+
   },
   server: {
     0: 'OPH-0: success',
+    200: 'OPH-200: success',
     401: 'OPH-401:Please log in',
     500: 'OPH-500:Service is busy , please try again later',
 
@@ -274,5 +284,7 @@ module.exports = {
     10997: 'OPH-10997:The number of free upload files exceeds the maximum limit',
     10998: 'OPH-10998:Failed to upload file',
     10999: 'OPH-10999:Signature verification failed',
+
+    10989:'OPH-10999:Verification failure',
   }
 }

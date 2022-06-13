@@ -5,7 +5,7 @@ import i18n from '../i18n'
 export default {
 
   /* Property_URL: 'http://192.168.10.228:9999', */
-  Property_URL: 'https://www.openpublish.io:8443',
+  Property_URL: 'https://openpublish.io/official_server',
   RPCUrl: 'HTTP://192.168.10.77:7545',
 
   setStore(key, value) {
@@ -187,6 +187,11 @@ export default {
     } else {
       location.href = url
     }
+  },
+
+  isEmail(v){
+    let reg = /^\w+@[a-z0-9]+\.[a-z]+$/i;
+    return reg.test(v)
   },
 
 }

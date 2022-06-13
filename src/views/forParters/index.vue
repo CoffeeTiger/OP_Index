@@ -49,13 +49,13 @@
           <div>
             <div>First Name*</div>
             <div class="forparters-list-input">
-              <input v-model="firstName" />
+              <input v-model="firstName" ref="firstName" />
             </div>
           </div>
           <div>
             <div>Last Name*</div>
             <div class="forparters-list-input">
-              <input v-model="lastName" />
+              <input v-model="lastName" ref="lastName"/>
             </div>
           </div>
         </div>
@@ -63,13 +63,13 @@
           <div>
             <div>Email*</div>
             <div class="forparters-list-input">
-              <input v-model="email"/>
+              <input v-model="email" ref="email"/>
             </div>
           </div>
           <div>
             <div>Company*</div>
             <div class="forparters-list-input">
-              <input v-model="company" />
+              <input v-model="company" ref="company"/>
             </div>
           </div>
         </div>
@@ -77,14 +77,14 @@
           <div>
             <div>Write a message*</div>
             <div class="forparters-list-textarea">
-              <textarea cols='270' rows="3" v-model="message"/>
+              <textarea cols='270' rows="3" v-model="message" ref="message"/>
             </div>
           </div>
         </div>
         <div class="forparters-btn">
           <!-- <div>Submit</div> -->
           <vue-recaptcha  ref="recaptcha" @verify="onVerify" @expired="onExpired" sitekey="6Lc7i18gAAAAAHXDQiBsIzx7y1PG6YY1Fd9kd8ZG">
-            <div @click="save">Submit</div>
+            <button class="ibutton-recaptha">Submit</button>
           </vue-recaptcha>
         </div>
       </div>
@@ -113,8 +113,55 @@
         this.$refs.invisibleRecaptcha.execute()
       },
       onVerify: function (response) {
-        console.log('token: ' + response)
         //add ajax send token to service
+
+        if(api.empty(this.firstName)){
+          api.iToastClient(this, '90101', 'secondary')
+          this.$refs.firstName.focus()
+          return
+        }
+        if(api.empty(this.lastName)){
+          api.iToastClient(this, '90102', 'secondary')
+          this.$refs.lastName.focus()
+          return
+        }
+        if(api.empty(this.email)){
+          api.iToastClient(this, '90103', 'secondary')
+          this.$refs.email.focus()
+          return
+        } else if(!api.isEmail(this.email)){
+          api.iToastClient(this, '90106', 'secondary')
+          this.$refs.email.focus()
+          return
+        }
+        if(api.empty(this.company)){
+          api.iToastClient(this, '90104', 'secondary')
+          this.$refs.company.focus()
+          return
+        }
+        if(api.empty(this.message)){
+          api.iToastClient(this, '90105', 'secondary')
+          this.$refs.message.focus()
+          return
+        }
+
+        let that = this
+        let pars = JSON.stringify({
+          response: response,
+          firstName: this.firstName,
+          lastName: this.lastName,
+          email: this.email,
+          company: this.company,
+          message: this.message
+        })
+        api.postAction('/unlogin/partner/add_info', pars, function(res) {
+          if (res.code == 200) {
+            api.iToastClient(this, '90107', 'secondary')
+          } else {
+            api.iToastServer(that, res.code, 'secondary')
+          }
+        })
+
       },
       onExpired: function () {
         console.log('Expired')
@@ -128,7 +175,17 @@
     }
   }
 </script>
-
+<style>
+  .grecaptcha-badge{
+    display: none;
+  }
+  .ibutton-recaptha{
+    background-color: #ffffff00;
+        width: 11.0625rem;
+        height: 3.125rem;
+        border: 0;
+  }
+</style>
 <style scoped="scoped">
   .forparters-list-textarea {
     width: 36.25rem;
