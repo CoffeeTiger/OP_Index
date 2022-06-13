@@ -49,13 +49,13 @@
           <div>
             <div>First Name*</div>
             <div class="forparters-list-input">
-              <input />
+              <input v-model="firstName" />
             </div>
           </div>
           <div>
             <div>Last Name*</div>
             <div class="forparters-list-input">
-              <input />
+              <input v-model="lastName" />
             </div>
           </div>
         </div>
@@ -63,13 +63,13 @@
           <div>
             <div>Email*</div>
             <div class="forparters-list-input">
-              <input />
+              <input v-model="email"/>
             </div>
           </div>
           <div>
             <div>Company*</div>
             <div class="forparters-list-input">
-              <input />
+              <input v-model="company" />
             </div>
           </div>
         </div>
@@ -77,18 +77,56 @@
           <div>
             <div>Write a message*</div>
             <div class="forparters-list-textarea">
-              <textarea cols='270' rows="3" />
+              <textarea cols='270' rows="3" v-model="message"/>
             </div>
           </div>
         </div>
         <div class="forparters-btn">
-          <div>Submit</div>
+          <!-- <div>Submit</div> -->
+          <vue-recaptcha  ref="recaptcha" @verify="onVerify" @expired="onExpired" sitekey="6Lc7i18gAAAAAHXDQiBsIzx7y1PG6YY1Fd9kd8ZG">
+            <div @click="save">Submit</div>
+          </vue-recaptcha>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+  import api from '../../util/network.js'
+  import { VueRecaptcha } from 'vue-recaptcha';
+  export default{
+    data() {
+      return{
+        firstName:'',
+        lastName:'',
+        email:'',
+        company:'',
+        message:''
+      }
+    },
+    components:{'vue-recaptcha': VueRecaptcha},
+    methods:{
+      onEvent() {
+        this.$refs.recaptcha.execute();
+      },
+      onSubmit: function () {
+        this.$refs.invisibleRecaptcha.execute()
+      },
+      onVerify: function (response) {
+        console.log('token: ' + response)
+        //add ajax send token to service
+      },
+      onExpired: function () {
+        console.log('Expired')
+      },
+      resetRecaptcha() {
+        this.$refs.recaptcha.reset()
+      },
+      save(){
+        console.info('11 save')
+      }
+    }
+  }
 </script>
 
 <style scoped="scoped">

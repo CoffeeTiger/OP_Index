@@ -9,6 +9,7 @@
     "dev": "npm run serve"
   },
   "dependencies": {
+    "@vue/composition-api": "^1.6.2",
     "axios": "^0.26.0",
     "bootstrap": "4.3.1",
     "bootstrap-vue": "^2.5.0",
@@ -37,6 +38,7 @@
     "vue-cropper": "^0.5.8",
     "vue-flatpickr-component": "^8.1.2",
     "vue-i18n": "^8.26.5",
+    "vue-recaptcha": "^2.0.2",
     "vue-router": "^3.0.6",
     "vue2-transitions": "^0.2.3",
     "web3": "^1.7.0"
