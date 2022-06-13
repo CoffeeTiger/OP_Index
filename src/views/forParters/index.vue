@@ -114,7 +114,7 @@
       },
       onVerify: function (response) {
         //add ajax send token to service
-        
+
         if(api.empty(this.firstName)){
           api.iToastClient(this, '90101', 'secondary')
           this.$refs.firstName.focus()
@@ -155,7 +155,6 @@
           message: this.message
         })
         api.postAction('/unlogin/partner/add_info', pars, function(res) {
-          console.info(res)
           if (res.code == 200) {
             api.iToastClient(this, '90107', 'secondary')
           } else {
