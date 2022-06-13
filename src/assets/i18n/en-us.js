@@ -285,6 +285,6 @@ module.exports = {
     10999: 'OPH-10999:Signature verification failed',
 
 
-    10989:'OPH-10999:Verification failure',
+    10989:'OPH-10989:Verification failure',
   }
 }
