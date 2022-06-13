@@ -256,7 +256,7 @@ module.exports = {
     90104:'OPH-90104:Please Enter Company Info',
     90105:'OPH-90105:Please Enter messages',
     90106:'OPH-90103:Please enter a valid email',
-    90107:'OPH-90103:Submit successfully',
+    90107:'OPH-90107:Submit successfully',
 
   },
   server: {

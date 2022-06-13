@@ -49,13 +49,13 @@
           <div>
             <div>First Name*</div>
             <div class="forparters-list-input">
-              <input v-model="firstName" ref="firstName" />
+              <input v-model="firstName" ref="firstName" maxlength="200"/>
             </div>
           </div>
           <div>
             <div>Last Name*</div>
             <div class="forparters-list-input">
-              <input v-model="lastName" ref="lastName"/>
+              <input v-model="lastName" ref="lastName" maxlength="200"/>
             </div>
           </div>
         </div>
@@ -63,13 +63,13 @@
           <div>
             <div>Email*</div>
             <div class="forparters-list-input">
-              <input v-model="email" ref="email"/>
+              <input v-model="email" ref="email" maxlength="200"/>
             </div>
           </div>
           <div>
             <div>Company*</div>
             <div class="forparters-list-input">
-              <input v-model="company" ref="company"/>
+              <input v-model="company" ref="company" max="200"/>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@
           <div>
             <div>Write a message*</div>
             <div class="forparters-list-textarea">
-              <textarea cols='270' rows="3" v-model="message" ref="message"/>
+              <textarea cols='270' rows="3" v-model="message" ref="message" maxlength="1000"/>
             </div>
           </div>
         </div>
@@ -156,7 +156,7 @@
         })
         api.postAction('/unlogin/partner/add_info', pars, function(res) {
           if (res.code == 200) {
-            api.iToastClient(this, '90107', 'secondary')
+            api.iToastClient(that, '90107', 'secondary')
           } else {
             api.iToastServer(that, res.code, 'secondary')
           }
