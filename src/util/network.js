@@ -50,7 +50,7 @@ export default {
         const vm = new Vue()
         vm.$bvToast.toast(i18n.t('networkMsg.10001'), {
           title: 'Hint',
-          toaster: 'b-toaster-bottom-right',
+          toaster: 'b-toaster-top-center',
           autoHideDelay: 6000
         })
       }
@@ -58,7 +58,7 @@ export default {
       const vm = new Vue()
       vm.$bvToast.toast(' Network Error ', {
         title: 'Hint',
-        toaster: 'b-toaster-bottom-right',
+        toaster: 'b-toaster-top-center',
         autoHideDelay: 6000
       })
     })
@@ -88,7 +88,7 @@ export default {
         const vm = new Vue()
         vm.$bvToast.toast(i18n.t('networkMsg.10001'), {
           title: 'Hint',
-          toaster: 'b-toaster-bottom-right',
+          toaster: 'b-toaster-top-center',
           autoHideDelay: 6000
         })
       }
@@ -96,7 +96,7 @@ export default {
       const vm = new Vue()
       vm.$bvToast.toast(' Network Error ', {
         title: 'Hint',
-        toaster: 'b-toaster-bottom-right',
+        toaster: 'b-toaster-top-center',
         autoHideDelay: 6000
       })
     })
@@ -116,7 +116,7 @@ export default {
     obj.$bvToast.toast(content, {
       title: 'hint',
       variant: variant,
-      toaster: 'b-toaster-bottom-right',
+      toaster: 'b-toaster-top-center',
       autoHideDelay: 6000
     })
   },
@@ -126,7 +126,7 @@ export default {
     obj.$bvToast.toast(i18n.t('' + m + ''), {
       title: 'hint',
       variant: variant,
-      toaster: 'b-toaster-bottom-right',
+      toaster: 'b-toaster-top-center',
       autoHideDelay: 6000
     })
   },
@@ -136,7 +136,7 @@ export default {
     obj.$bvToast.toast(i18n.t('' + m + ''), {
       title: 'hint',
       variant: variant,
-      toaster: 'b-toaster-bottom-right',
+      toaster: 'b-toaster-top-center',
       autoHideDelay: 6000
     })
   },

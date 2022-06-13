@@ -112,7 +112,7 @@
     margin-bottom: 0rem
   }
 
-  .about-list-n2 p {
+  .about-list-n2>p {
     font-size: 2.5rem;
     font-weight: 600;
     line-height: 2.75rem;
@@ -232,7 +232,8 @@
     }
 
     .about-our-con {
-      padding: 2.125rem 1.1875rem 3rem 1.375rem
+      padding: 2.125rem 1.1875rem 3rem 1.375rem;
+      font-size: 1.625rem;
     }
 
     .about-list {
@@ -254,7 +255,7 @@
 
     .about-list-m1 {
       width: 100%;
-      padding: 0rem 5.1875rem 9.25rem 6.6875rem;
+      padding: 0rem 6.6875rem 9.25rem 5.1875rem;
       margin-right: 0rem;
     }
 
@@ -265,8 +266,9 @@
     .about-list-name {
       padding: 0.5625rem 1.375rem;
       color: #313131;
-      margin-left: 10.125rem;
+      margin-left: 0rem;
       margin-top: -1.875rem;
+      right: 7.0625rem;
     }
 
     .about-list-n1 .p1 {
@@ -304,6 +306,7 @@
       align-items: flex-start;
       margin-left: 3.125rem;
       padding: 3.1875rem 0;
+      font-size: 1.625rem;
     }
 
     .about-btn-list-l1 {
@@ -325,6 +328,7 @@
     }
 
     .about .about-our .about-our-title {
+      font-size: 4.375rem;
       margin-left: 1.375rem;
       margin-bottom: 0rem;
     }

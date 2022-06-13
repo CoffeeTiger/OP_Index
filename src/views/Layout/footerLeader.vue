@@ -227,7 +227,7 @@
     }
 
     .barList-div>ul li {
-      font-size: 1.5rem;
+      font-size: 1.625rem;
       line-height: 2.1875rem;
       margin-bottom: 1.5625rem;
     }

@@ -4,7 +4,7 @@
       <div class="forparters-head-left">
         <div class="forparters-size">
           <p>What we </p>
-          <p>can offer</p>
+          <p style="margin-bottom: 0rem;">can offer</p>
         </div>
         <div class="forparters-img">
           <img src="../../assets/imgs/home-logo.png" />
@@ -13,23 +13,28 @@
       <div class="forparters-head-right">
         <div class="forparters-head-content">
           <div class="forparters-head-title">Motivated user base</div>
-          <p>An engaged audience that’s eager to earn money by completing microtasks, employing their nfts, or in
+          <p>An engaged audience that’s eager to earn money by completing microtasks, employing
+            their nfts, or in
             other similar ways.</p>
           <p></p>
           <br>
           <p></p>
           <div class="forparters-head-title">Global coverage</div>
-          <p>Users from 150+ countries all around the world, representing various age groups and market segments.</p>
+          <p>Users from 150+ countries all around the world, representing various age groups and
+            market segments.</p>
           <p></p>
           <br>
           <p></p>
           <div class="forparters-head-title">Account management</div>
-          <p>Custom service that’s personalized according to the individual needs of each business partner.</p>
+          <p>Custom service that’s personalized according to the individual needs of each
+            business
+            partner.</p>
           <p></p>
           <br>
           <p></p>
           <div class="forparters-head-title">Payment flexibility</div>
-          <p>A chance to offer payments in cryptocurrency that provides extra benefits over opensea, including fast
+          <p>A chance to offer payments in cryptocurrency that provides extra benefits over
+            opensea, including fast
             transactions with much lower fees.</p>
         </div>
       </div>
@@ -47,43 +52,44 @@
       <div class="forparters-bottom-right">
         <div class="forparters-list">
           <div>
-            <div>First Name*</div>
+            <div class="forparters-list-name">First Name*</div>
             <div class="forparters-list-input">
-              <input v-model="firstName" ref="firstName" maxlength="200"/>
+              <input v-model="firstName" ref="firstName" maxlength="200" />
             </div>
           </div>
-          <div>
-            <div>Last Name*</div>
+          <div class="forparters-list-l1">
+            <div class="forparters-list-name">Last Name*</div>
             <div class="forparters-list-input">
-              <input v-model="lastName" ref="lastName" maxlength="200"/>
-            </div>
-          </div>
-        </div>
-        <div class="forparters-list" style="padding-top: 2.875rem;">
-          <div>
-            <div>Email*</div>
-            <div class="forparters-list-input">
-              <input v-model="email" ref="email" maxlength="200"/>
-            </div>
-          </div>
-          <div>
-            <div>Company*</div>
-            <div class="forparters-list-input">
-              <input v-model="company" ref="company" max="200"/>
+              <input v-model="lastName" ref="lastName" maxlength="200" />
             </div>
           </div>
         </div>
         <div class="forparters-list" style="padding-top: 2.875rem;">
           <div>
-            <div>Write a message*</div>
+            <div class="forparters-list-name">Email*</div>
+            <div class="forparters-list-input">
+              <input v-model="email" ref="email" maxlength="200" />
+            </div>
+          </div>
+          <div class="forparters-list-l1">
+            <div class="forparters-list-name">Company*</div>
+            <div class="forparters-list-input">
+              <input v-model="company" ref="company" max="200" />
+            </div>
+          </div>
+        </div>
+        <div class="forparters-list" style="padding-top: 2.875rem;">
+          <div>
+            <div class="forparters-list-name">Write a message*</div>
             <div class="forparters-list-textarea">
-              <textarea cols='270' rows="3" v-model="message" ref="message" maxlength="1000"/>
+              <textarea cols='270' rows="3" v-model="message" ref="message" maxlength="1000" />
             </div>
           </div>
         </div>
         <div class="forparters-btn">
           <!-- <div>Submit</div> -->
-          <vue-recaptcha  ref="recaptcha" @verify="onVerify" @expired="onExpired" sitekey="6Lc7i18gAAAAAHXDQiBsIzx7y1PG6YY1Fd9kd8ZG">
+          <vue-recaptcha ref="recaptcha" @verify="onVerify" @expired="onExpired"
+            sitekey="6Lc7i18gAAAAAHXDQiBsIzx7y1PG6YY1Fd9kd8ZG">
             <button class="ibutton-recaptha">Submit</button>
           </vue-recaptcha>
         </div>
@@ -93,53 +99,57 @@
 </template>
 <script>
   import api from '../../util/network.js'
-  import { VueRecaptcha } from 'vue-recaptcha';
-  export default{
+  import {
+    VueRecaptcha
+  } from 'vue-recaptcha';
+  export default {
     data() {
-      return{
-        firstName:'',
-        lastName:'',
-        email:'',
-        company:'',
-        message:''
+      return {
+        firstName: '',
+        lastName: '',
+        email: '',
+        company: '',
+        message: ''
       }
     },
-    components:{'vue-recaptcha': VueRecaptcha},
-    methods:{
+    components: {
+      'vue-recaptcha': VueRecaptcha
+    },
+    methods: {
       onEvent() {
         this.$refs.recaptcha.execute();
       },
-      onSubmit: function () {
+      onSubmit: function() {
         this.$refs.invisibleRecaptcha.execute()
       },
-      onVerify: function (response) {
+      onVerify: function(response) {
         //add ajax send token to service
 
-        if(api.empty(this.firstName)){
+        if (api.empty(this.firstName)) {
           api.iToastClient(this, '90101', 'secondary')
           this.$refs.firstName.focus()
           return
         }
-        if(api.empty(this.lastName)){
+        if (api.empty(this.lastName)) {
           api.iToastClient(this, '90102', 'secondary')
           this.$refs.lastName.focus()
           return
         }
-        if(api.empty(this.email)){
+        if (api.empty(this.email)) {
           api.iToastClient(this, '90103', 'secondary')
           this.$refs.email.focus()
           return
-        } else if(!api.isEmail(this.email)){
+        } else if (!api.isEmail(this.email)) {
           api.iToastClient(this, '90106', 'secondary')
           this.$refs.email.focus()
           return
         }
-        if(api.empty(this.company)){
+        if (api.empty(this.company)) {
           api.iToastClient(this, '90104', 'secondary')
           this.$refs.company.focus()
           return
         }
-        if(api.empty(this.message)){
+        if (api.empty(this.message)) {
           api.iToastClient(this, '90105', 'secondary')
           this.$refs.message.focus()
           return
@@ -163,27 +173,28 @@
         })
 
       },
-      onExpired: function () {
+      onExpired: function() {
         console.log('Expired')
       },
       resetRecaptcha() {
         this.$refs.recaptcha.reset()
       },
-      save(){
+      save() {
         console.info('11 save')
       }
     }
   }
 </script>
 <style>
-  .grecaptcha-badge{
+  .grecaptcha-badge {
     display: none;
   }
-  .ibutton-recaptha{
+
+  .ibutton-recaptha {
     background-color: #ffffff00;
-        width: 11.0625rem;
-        height: 3.125rem;
-        border: 0;
+    width: 11.0625rem;
+    height: 3.125rem;
+    border: 0;
   }
 </style>
 <style scoped="scoped">
@@ -196,6 +207,8 @@
     width: 100%;
     margin-top: 3.75rem;
     border-bottom: 0.0625rem solid #313131;
+    outline: none;
+    border-radius: 0;
   }
 
   .forparters-btn {
@@ -218,6 +231,8 @@
     line-height: 1.875rem;
   }
 
+
+
   .forparters-list-input {
     width: 16.875rem;
     margin-right: 2.5rem;
@@ -227,6 +242,8 @@
     width: 100%;
     margin-top: 3.75rem;
     border-bottom: 0.0625rem solid #313131;
+    outline: none;
+    border-radius: 0;
   }
 
   .forparters-list {
@@ -284,17 +301,15 @@
   .forparters-head-content>p {
     font-size: 1.125rem;
     line-height: 1.875rem;
-  }
-
-  .forparters-img {
-    margin: 10.875rem 4.3125rem;
+    font-weight: 400;
   }
 
   .forparters-img>img {
     width: 100%;
     height: 100%;
     margin-left: 5rem;
-    margin-bottom: 4.1875rem;
+    padding-bottom: 4.1875rem;
+    padding-right: 7.5625rem;
   }
 
   .forparters-size {
@@ -339,16 +354,66 @@
   }
 
   @media only screen and (min-width: 0px) and (max-width: 750px) {
+    .forparters-list-input>input {
+      margin-top: 2.75rem;
+    }
+    textarea{
+      font-size: 1.75rem;
+    }
+    input{
+      font-size: 1.75rem;
+    }
+    .forparters-list-input {
+      width: 36.25rem;
+      margin-right: 2.5rem;
+    }
+
+    .forparters-list-l1 {
+      margin-top: 2.625rem;
+    }
+
+    .forparters-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .forparters-list-name {
+      font-size: 1.5rem;
+    }
+
+    .forparters-size {
+      margin-bottom: 4.3125rem;
+      margin-top: 0.8125rem;
+    }
+
     .forparters-size>p {
       font-size: 4.375rem;
       font-family: Poppins-Bold, Poppins;
       font-weight: bold;
       color: #FFFFFF;
       line-height: 5.75rem;
+      margin-bottom: 0rem;
     }
 
     .forparters-img>img {
       margin-left: 0rem;
+      padding: 0rem 10.875rem 4.3125rem 10.875rem;
+    }
+
+    .forparters-head-title {
+      font-size: 1.75rem;
+      line-height: 2.625rem;
+    }
+
+
+    .forparters-head-content>p {
+      font-size: 1.625rem;
+      line-height: 2.625rem;
+      font-weight: 400;
+    }
+
+    .forparters-p {
+      font-size: 400;
     }
 
     .forparters {
@@ -395,6 +460,8 @@
       padding-left: 0rem;
       margin-top: 6.3125rem;
       text-align: center;
+      font-size: 4.375rem;
+      line-height: 5.75rem;
     }
 
     .forparters-app>p {

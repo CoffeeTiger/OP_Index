@@ -630,6 +630,8 @@
     line-height: 7.1875rem;
     width: -webkit-calc(100% - 1.2rem);
     margin: 0 auto;
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -756,13 +758,21 @@
       grid-template-columns: repeat(1, 1fr);
     }
 
+    .ipCon {
+      font-size: 2.125rem;
+      width: 140%;
+      color: #979797;
+    }
+
     .roadmap-item {
       grid-row: var(--i);
     }
-    .align-bottom{
+
+    .align-bottom {
       margin-bottom: 9.25rem;
     }
-    .roadmap-item:last-child{
+
+    .roadmap-item:last-child {
       margin-bottom: 0;
     }
   }

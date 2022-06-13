@@ -14,7 +14,7 @@
               <span class="nav-link-inner--text i-nav-link-font" :class="titlechk==1?'i-nav-link-font-check':''">For
                 partners</span>
             </b-nav-item>
-            <b-nav-item class="inav-item" @click="title(2)">
+            <b-nav-item to="/reward" class="inav-item" @click="title(2)">
               <span class="nav-link-inner--text i-nav-link-font"
                 :class="titlechk==2?'i-nav-link-font-check':''">Reward</span>
             </b-nav-item>
@@ -45,7 +45,7 @@
               <router-link class="menu-rotlink" to="/forParters">For partners</router-link>
             </li>
             <li>
-              <router-link class="menu-rotlink" to="">Reward</router-link>
+              <router-link class="menu-rotlink" to="/reward">Reward</router-link>
             </li>
             <li>
               <router-link class="menu-rotlink" to="">FAQ</router-link>
