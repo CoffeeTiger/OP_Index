@@ -199,7 +199,7 @@
     font-family: Poppins-Regular, Poppins;
     font-weight: 400;
     color: #313131;
-    line-height: 2rem;
+    line-height: 2.375rem;
     padding-bottom: 7rem;
     padding-right: 30.9375rem;
   }
@@ -229,6 +229,7 @@
       text-align: left;
       margin: 0 1.875rem;
       width: calc(100% - 3.75rem);
+      margin-bottom: 1.875rem;
     }
 
     .about-our-con {
@@ -275,6 +276,7 @@
       font-weight: 600;
       font-size: 1.625rem;
       line-height: 2rem;
+      margin-bottom: 0rem;
     }
 
     .about-list-n1 .p2 {

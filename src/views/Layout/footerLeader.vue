@@ -133,7 +133,6 @@
     font-size: 2.125rem;
     color: #ffffff;
     line-height: 2.1875rem;
-
   }
 
   .open h2 span {
@@ -153,7 +152,7 @@
 
   .ifooter {
     width: 100%;
-    height: 29.625rem;
+    height: 34.625rem;
     line-height: 5.7222rem;
     /* max-width: 1920px; */
     margin: 0 auto;
@@ -194,15 +193,21 @@
   @media only screen and (min-width: 0px) and (max-width: 750px) {
     .barList-reser {
       margin-top: 0.625rem;
+      font-size: 1.375rem;
+    }
+    .barList-reser > img{
+      width: 1.25rem;
+      height: 1.25rem;
     }
 
     .open h2 {
       margin-bottom: 0rem;
+      line-height: 1.7rem;
     }
 
     .barList {
       text-align: center;
-      margin-top: 2.375rem;
+      margin-top: 1.8rem;
     }
 
     .barList-reser-a {
@@ -212,7 +217,7 @@
     .barList-b2-div {
       display: flex;
       width: 100%;
-      margin-top: 2.25rem;
+      margin-top: 3.25rem;
     }
 
     .barList-div {
@@ -228,13 +233,17 @@
 
     .barList-div>ul li {
       font-size: 1.625rem;
-      line-height: 2.1875rem;
+      line-height: 3.1875rem;
       margin-bottom: 1.5625rem;
+      color: #ffffff;
+    }
+    .barList-div>ul li a{
+      color: #ffffff !important;
     }
 
     .barList-div img {
-      width: 2.5625rem;
-      height: 2rem;
+      width: 3rem;
+      height: 2.5rem;
       margin-right: 4.9375rem;
       margin-top: 2.375rem;
     }

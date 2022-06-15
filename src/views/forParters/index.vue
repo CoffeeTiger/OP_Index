@@ -82,7 +82,7 @@
           <div>
             <div class="forparters-list-name">Write a message*</div>
             <div class="forparters-list-textarea">
-              <textarea cols='270' rows="3" v-model="message" ref="message" maxlength="1000" />
+              <textarea class="textarea-hegiht" cols='270' rows="3" v-model="message" ref="message" maxlength="1000" />
             </div>
           </div>
         </div>
@@ -195,6 +195,7 @@
     width: 11.0625rem;
     height: 3.125rem;
     border: 0;
+    color: #000000;
   }
 </style>
 <style scoped="scoped">
@@ -206,7 +207,7 @@
   .forparters-list-textarea>textarea {
     width: 100%;
     margin-top: 3.75rem;
-    border-bottom: 0.0625rem solid #313131;
+    border-bottom: 0.0625rem solid #D8D8D8;
     outline: none;
     border-radius: 0;
   }
@@ -241,7 +242,7 @@
   .forparters-list-input>input {
     width: 100%;
     margin-top: 3.75rem;
-    border-bottom: 0.0625rem solid #313131;
+    border-bottom: 0.0625rem solid #D8D8D8;
     outline: none;
     border-radius: 0;
   }
@@ -354,15 +355,27 @@
   }
 
   @media only screen and (min-width: 0px) and (max-width: 750px) {
+    .ibutton-recaptha {
+      color: #000000;
+      font-size: 1.625rem;
+    }
+
+    .textarea-hegiht {
+      line-height: 3rem;
+    }
+
     .forparters-list-input>input {
       margin-top: 2.75rem;
     }
-    textarea{
+
+    textarea {
       font-size: 1.75rem;
     }
-    input{
+
+    input {
       font-size: 1.75rem;
     }
+
     .forparters-list-input {
       width: 36.25rem;
       margin-right: 2.5rem;

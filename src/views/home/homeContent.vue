@@ -8,10 +8,14 @@
           </p>
         </div>
         <div class="ishares">
-          <a href="https://t.me/openpublishTGcn" target="_blank"><img src="../../assets/imgs/news/tg.svg" class="ihome-share" /></a>
-          <a href="https://twitter.com/OpenPublishNFT" target="_blank"><img src="../../assets/imgs/news/Twitter.svg" class="ihome-share" /></a>
-          <a href="https://discord.gg/openpublish" target="_blank"><img src="../../assets/imgs/news/xiaoren.svg" class="ihome-share" /></a>
-          <a href="https://www.youtube.com/c/Openpublish" target="_blank"><img src="../../assets/imgs/news/yb.svg" class="ihome-share" /></a>
+          <a href="https://t.me/openpublishTGcn" target="_blank"><img src="../../assets/imgs/news/tg.svg"
+              class="ihome-share" /></a>
+          <a href="https://twitter.com/OpenPublishNFT" target="_blank"><img src="../../assets/imgs/news/Twitter.svg"
+              class="ihome-share" /></a>
+          <a href="https://discord.gg/openpublish" target="_blank"><img src="../../assets/imgs/news/xiaoren.svg"
+              class="ihome-share" /></a>
+          <a href="https://www.youtube.com/c/Openpublish" target="_blank"><img src="../../assets/imgs/news/yb.svg"
+              class="ihome-share" /></a>
         </div>
         <div class="imore">
           <a href="https://wiki.openpublish.io" target="_blank">
@@ -34,9 +38,7 @@
           <div class="roadmap-top">
             <div>
               <h3>2022/04/08</h3>
-              <p>OP Official</p>
-              <p>Twitter,Reddit,</p>
-              <p>and Discord Launch</p>
+              <p>OP Official Discord Launch</p>
             </div>
             <div>
               <h3>2022/06/16</h3>
@@ -68,11 +70,11 @@
           <div class="roadmap-bottom">
             <div class="roadmap-b">
               <h3>2022/04/16</h3>
-              <p>OP Official Site<br />Launch</p>
+              <p>OP Official SiteLaunch</p>
             </div>
             <div class="roadmap-b">
               <h3>2022/07/16</h3>
-              <p>“OP Beta” Online<br /></p>
+              <p>“OP Beta” Online</p>
             </div>
             <div class="roadmap-b">
               <h3>2022/08/16</h3>
@@ -143,7 +145,7 @@
       </div>
     </div>
 
-    <div class="ihome-panel">
+    <div class="ihome-panel" id="faq_id">
       <div class="ipanel-header" style="margin-bottom: 3.75rem;">
         <div class="ititle color_yellow">FAQ</div>
       </div>
@@ -266,7 +268,19 @@
       }
     },
     created() {
-      console.info('create--0001')
+    },
+    mounted() {
+      var hash = window.location.hash;
+      var index = hash.indexOf("#")
+      if (index != -1) {
+        var id = hash.substring(index + 1, hash.length + 1)
+        var div = document.getElementById(id);
+        if (div) {
+          setTimeout(function() {
+            document.getElementById(id).scrollIntoView()
+          }, 100)
+        }
+      }
     },
     methods: {
       show(v) {
@@ -294,8 +308,6 @@
       }
     }
   }
-
-  var open1 = false,open2 = false,open3 = false,open4 = false,open5 = false;
 
 </script>
 
@@ -675,8 +687,8 @@
     border-radius: 0.8888rem;
     overflow: hidden;
     font-family: Poppins-Regular, Poppins;
-  } 
-  
+  }
+
   .icollapse .icollapse-title-contain {
     width: 100%;
     background-color: #252525;

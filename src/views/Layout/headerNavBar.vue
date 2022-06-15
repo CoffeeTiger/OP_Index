@@ -19,7 +19,7 @@
                 :class="titlechk==2?'i-nav-link-font-check':''">Reward</span>
             </b-nav-item>
             <b-nav-item class="inav-item" @click="title(3)">
-              <span class="nav-link-inner--text i-nav-link-font"
+              <span @click="toLocal('/#faq_id')" class="nav-link-inner--text i-nav-link-font"
                 :class="titlechk==3?'i-nav-link-font-check':''">FAQ</span>
             </b-nav-item>
             <b-nav-item class="inav-item" @click="title(5)">
@@ -41,23 +41,22 @@
         </div>
         <div v-if="menuShow" class="menu-ul-u2">
           <ul>
-            <li>
+            <li @click="menuClick">
               <router-link class="menu-rotlink" to="/forParters">For partners</router-link>
             </li>
-            <li>
+            <li @click="menuClick">
               <router-link class="menu-rotlink" to="/reward">Reward</router-link>
             </li>
-            <li>
-              <router-link class="menu-rotlink" to="">FAQ</router-link>
+            <li @click="menuClick">
+              <router-link class="menu-rotlink" @click.native="toLocal('/#faq_id')" to="">FAQ</router-link>
             </li>
-            <li>
-              <router-link class="menu-rotlink" to="">Blog</router-link>
+            <li @click="menuClick">
+              <router-link class="menu-rotlink" to="" >Blog</router-link>
             </li>
-            <li>
+            <li @click="menuClick">
               <router-link class="menu-rotlink" to="/about">About</router-link>
             </li>
             <li style="border: none;" class="menu-rotlink">
-              <!-- <router-link class="menu-rotlink" to=""> -->
               <a href="https://m.openpublish.io" target="_blank">EnterApp</a>
             </li>
           </ul>
@@ -104,6 +103,14 @@
       })
     },
     methods: {
+      menuClick() {
+        this.menuShow = false;
+      },
+      toLocal(loc) {
+        this.$router.push({
+          path: loc
+        })
+      },
       btnClick() {
         this.menuShow = !this.menuShow
       },
@@ -325,6 +332,10 @@
   }
 </style>
 <style scoped="scoped">
+  .menu-ul-u2 ul li>a:hover {
+    color: #F7B62D !important;
+  }
+
   .menu-btn {
     display: none;
   }
@@ -489,9 +500,18 @@
       font-weight: 400;
       color: #FFFFFF;
       line-height: 2.4375rem;
-
     }
 
+    .menu-rotlink:hover {
+      color: #F7B62D;
+      text-decoration: underline;
+    }
+
+    /* .menu-rotlink .router-link-exact-active {
+      color: #F7B62D;
+      cursor: pointer;
+    }
+ */
     .menu-btn {
       display: block;
       width: 2.375rem;

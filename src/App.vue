@@ -47,6 +47,9 @@
       Content,
       FadeTransition
     },
+    mounted() {
+      this.initScrollbar()
+    },
     methods: {
       initScrollbar() {
         let isWindows = navigator.platform.startsWith('Win');
@@ -54,14 +57,32 @@
           initScrollbar('sidenav');
         }
       }
-    },
-    mounted() {
-      this.initScrollbar()
     }
   }
 </script>
 <style>
-  @import url("assets/scss/com.css");
+ @import url("assets/scss/com.css");
+
+  .main-content {
+    /* max-width: var(--max-width); */
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  .show-contain {
+    position: relative;
+    max-width: --max-width;
+    margin: 4.5555rem auto 0 auto;
+    min-height: calc(100vh - 10rem);
+  }
+
+  @media only screen and (min-width: 0px) and (max-width: 992px) {
+    .show-contain {
+      position: relative;
+      margin: 3.5rem auto 0 auto;
+    }
+  }
 
   :root {
     --max-width: 1920px;

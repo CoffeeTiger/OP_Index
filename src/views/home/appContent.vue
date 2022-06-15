@@ -91,7 +91,25 @@
             </div> -->
           </div>
         </div>
-
+        <div class="ipanel-card imargin-bottom-24 bg_lightgray">
+          <div class="ipanel-card-body">
+            <div class="ipanel-card-title">
+              <div class="ititle color_yellow">Trading is mining</div>
+              <!-- <img src="../../assets/imgs/cattle/cattle-purple.png" class="icattle"/> -->
+            </div>
+            <div class="ipanel-card-info">
+              <div class="iinfs">Transaction mining is your second strategy for gaining value at OpenPublish. In
+                addition to directly profiting from NFT trading, you can also get more OPH from platform trading
+                rewards. OpenPublish charges a 2.5% transaction fee for all NFT transactions. Every 6500 Ethereum block
+                cycles (about 24 hours) is used as a cycle, and all fees will be injected into the vault at the end of
+                the cycle, combined with other vault earnings as the source of OPH rewards.</div>
+            </div>
+            <!-- <div class="ipanel-card-btns">
+              <div class="ibtn ibtn-stake bg_yellow">STAKE</div>
+        
+            </div> -->
+          </div>
+        </div>
         <div class="ipanel-card imargin-bottom-24 bg_lightgray">
           <div class="ipanel-card-body">
             <div class="ipanel-card-title">
@@ -143,10 +161,10 @@
         </div>
       </div>
 
-      <div class="ihome-panel">
+      <div class="ihome-panel" id="faq_id">
         <div class="ipanel-title color_yellow">FAQ</div>
         <div class="faq-list">
-          <div>Got questions? Get answers.</div>
+          <div style="margin-bottom: 0.75rem">Got questions? Get answers.</div>
           <div class="faq-find" style="margin-bottom: 1.875rem;">
             Find answers to the post common questions below. Have a query that we haven’t covered? Join our
             <a>Discord</a> or <a>Telegram</a> and reach out us.
@@ -284,10 +302,17 @@
 
     },
     mounted() {
-      /* var video = document.getElementById('video');
-      video.play();
-      console.info(video) */
-
+      var hash = window.location.hash;
+      var index = hash.indexOf("#")
+      if (index != -1) {
+        var id = hash.substring(index + 1, hash.length + 1)
+        var div = document.getElementById(id);
+        if (div) {
+          setTimeout(function() {
+            document.getElementById(id).scrollIntoView()
+          }, 100)
+        }
+      }
     },
     methods: {
       show(v) {
@@ -334,11 +359,11 @@
 
   .faq-find {
     width: 100%;
-    font-size: 1.625rem;
+    font-size: 1.75rem;
     font-family: Poppins-Medium, Poppins;
     font-weight: 500;
     color: #FFFFFF;
-    line-height: 2.1875rem;
+    line-height: 2.375rem;
   }
 
   .roadmap {

@@ -5,7 +5,7 @@ import i18n from '../i18n'
 export default {
 
   /* Property_URL: 'http://192.168.10.228:9999', */
-  Property_URL: 'https://openpublish.io/official_server',
+  Property_URL: 'https://oss-manager.openpublish.io:8443/official_server',
   RPCUrl: 'HTTP://192.168.10.77:7545',
 
   setStore(key, value) {
