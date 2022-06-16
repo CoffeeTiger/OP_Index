@@ -27,6 +27,11 @@ const routes = [
       component: () => import('../views/reward/index.vue')
     },
     {
+      path: '/airdrop',
+      name: 'airdrop',
+      component: () => import('../views/airdrop/index.vue')
+    },
+    {
       path: '/test',
       name: 'test',
       component: () => import('../views/test/test.vue')

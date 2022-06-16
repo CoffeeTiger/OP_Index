@@ -171,46 +171,6 @@
     border:0.1111rem solid #3C3C3C;
   }
 
-  /* .itable-bond{
-    width: 100%;
-    font-size: 1.5555rem;
-    font-family: Poppins-Regular, Poppins;
-    font-weight: 400;
-    color: #979797;
-  }
-  .itable-bond th, td{
-    height: 4.8888rem;
-    line-height: 4.8888rem;
-    border: 1px solid #FFFFFF00;
-    font-size: 1.5555rem;
-    font-family: Poppins-Regular, Poppins;
-    font-weight: 400;
-  }
-  .itable-bond th{
-    color: #FFFFFF;
-  }
-  .itable-bond thead th{
-    border: 0!important;
-    text-align: left;
-  }
-
-  .itable-bond .ibond-th30{
-    width: 30%;
-  }
-  .itable-bond .ibond-th25{
-    width: 25%;
-  }
-  .itable-bond .ibond-th20{
-    width: 20%;
-  }
-  .itable-bond tr:hover{
-    background: #414242;
-    color: #FFFFFF !important;
-  }
-  .itable-bond tr > .ipadding_left32{
-    padding-left: 1.6666rem !important;
-  } */
-
 
 
 </style>

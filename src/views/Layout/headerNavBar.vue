@@ -14,6 +14,10 @@
               <span class="nav-link-inner--text i-nav-link-font" :class="titlechk==1?'i-nav-link-font-check':''">For
                 partners</span>
             </b-nav-item>
+            <b-nav-item to="/airdrop" class="inav-item" @click="title(5)">
+              <span class="nav-link-inner--text i-nav-link-font"
+                :class="titlechk==5?'i-nav-link-font-check':''">Airdrop</span>
+            </b-nav-item>
             <b-nav-item to="/reward" class="inav-item" @click="title(2)">
               <span class="nav-link-inner--text i-nav-link-font"
                 :class="titlechk==2?'i-nav-link-font-check':''">Reward</span>
@@ -21,10 +25,6 @@
             <b-nav-item class="inav-item" @click="title(3)">
               <span @click="toLocal('/#faq_id')" class="nav-link-inner--text i-nav-link-font"
                 :class="titlechk==3?'i-nav-link-font-check':''">FAQ</span>
-            </b-nav-item>
-            <b-nav-item class="inav-item" @click="title(5)">
-              <span class="nav-link-inner--text i-nav-link-font"
-                :class="titlechk==5?'i-nav-link-font-check':''">Blog</span>
             </b-nav-item>
             <b-nav-item to="/about" class="inav-item" @click="title(4)">
               <span class="nav-link-inner--text i-nav-link-font"
@@ -45,13 +45,13 @@
               <router-link class="menu-rotlink" to="/forParters">For partners</router-link>
             </li>
             <li @click="menuClick">
+              <router-link class="menu-rotlink" to="/airdrop">Airdrop</router-link>
+            </li>
+            <li @click="menuClick">
               <router-link class="menu-rotlink" to="/reward">Reward</router-link>
             </li>
             <li @click="menuClick">
               <router-link class="menu-rotlink" @click.native="toLocal('/#faq_id')" to="">FAQ</router-link>
-            </li>
-            <li @click="menuClick">
-              <router-link class="menu-rotlink" to="" >Blog</router-link>
             </li>
             <li @click="menuClick">
               <router-link class="menu-rotlink" to="/about">About</router-link>
