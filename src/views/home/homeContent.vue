@@ -153,7 +153,7 @@
         <div>Got questions? Get answers.</div>
         <div class="faq-find" style="margin-bottom: 1.875rem;">
           Find answers to the post common questions below. Have a query that we haven’t covered? Join our
-          <a>Discord</a> or <a>Telegram</a> and reach out us.
+          <a href="https://discord.com/invite/openpublish" target="_blank">Discord</a> or <a  href="https://t.me/openpublishTGcn" target="_blank">Telegram</a> and reach out us.
         </div>
       </div>
       <div class="ipanel-body1">

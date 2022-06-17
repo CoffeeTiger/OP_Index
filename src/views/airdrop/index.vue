@@ -21,30 +21,28 @@
           <img src="../../assets/imgs/news/air-trumpet.png" />
         </div>
         <div class="aitdiop-btn-title">Step-by-Step Guide OpenPublish Airdrop</div>
-        <div class="aitdrop-list">
-          <img class="airdiop-list-img" style="margin-top: 1.1875rem;margin-bottom: 1.1875rem;"
-            src="../../assets/imgs/news/air-niu.svg" />
-          Visit our website <a href="#"> OpenPublish.io </a> daily +1
-        </div>
+       <!-- <div class="aitdrop-list">
+          <img class="airdiop-list-img" src="../../assets/imgs/news/air-niu.svg" />
+          Visit our website <a href="https://openpublish.io" target="_blank"> OpenPublish.io </a> daily +1
+        </div> -->
         <div class="aitdrop-list">
           <img class="airdiop-list-img2" src="../../assets/imgs/news/air-you.svg" />
-          Watch on <a href="#"> YouTube </a> +1
+          Watch on <a href="https://www.youtube.com/c/Openpublish" target="_blank"> YouTube </a> +1
         </div>
         <div class="aitdrop-list">
           <img class="airdiop-list-img2" src="../../assets/imgs/news/air-twitter.svg" />
-          Follow on <a href="#">Twitter </a> +1
+          Follow on <a href="https://twitter.com/OpenPublishNFT" target="_blank">Twitter </a> +1
         </div>
         <div class="aitdrop-list">
           <img class="airdiop-list-img2" src="../../assets/imgs/news/air-discord.svg" />
-          Join our <a href="#"> Discord </a> server +5
+          Join our <a href="https://discord.com/invite/openpublish" target="_blank"> Discord </a> server +5
         </div>
         <div class="aitdrop-list">
           <img class="airdiop-list-img2" src="../../assets/imgs/news/air-tg.svg" />
-          Join on <a href="#"> Telegram </a> +1
+          Join on <a href="https://t.me/openpublishTGcn" target="_blank"> Telegram </a> +2
         </div>
         <div class="aitdrop-list">
-          <img class="airdiop-list-img" style="margin-top: 1.1875rem;margin-bottom: 1.1875rem;"
-            src="../../assets/imgs/news/air-niu.svg" />
+          <img class="airdiop-list-img" src="../../assets/imgs/news/air-niu.svg" />
           <div class="airdiop-list-con">Refer friends to participate in this event +1</div>
           <div class="airdiop-list-btn">Share</div>
         </div>
@@ -62,7 +60,7 @@
           </div>
           <table class="aitdiop-table" border="1">
             <tr class="airdiop-tr">
-              <td class="airdiop-td" style="padding-right: 4.0625rem;">Ranking</td>
+              <td class="airdiop-td" style="padding-right: 4.0625rem;padding-left: 3.5rem;">Ranking</td>
               <td class="airdiop-td2">Award</td>
             </tr>
             <tr class="airdiop-tr">
@@ -228,19 +226,16 @@
     margin-bottom: 1.5rem;
   }
 
-  .aitdrop-list>img {
-
-    margin: 1.6875rem 1.625rem 1.6875rem 1.875rem;
-  }
-
   .airdiop-list-img2 {
     width: 2.125rem;
     height: 1.875rem;
+    margin: 1.6875rem 1.625rem 1.6875rem 1.875rem;
   }
 
   .airdiop-list-img {
     width: 2.125rem;
     height: 2.6875rem;
+    margin: 1.1875rem 1.625rem 1.1875rem 1.875rem;
   }
 
   .aitdrop-list>a {
@@ -339,8 +334,6 @@
     color: #979797;
   }
 
-  /* background-repeat-y: repeat; */
-
 
   .airdiop-td2 {
     text-align: left;
@@ -372,27 +365,183 @@
 
   .aitdiop-btn-left {
     width: 15.0625rem;
-    padding: 0.625rem 0;
+    position: relative;
+    overflow: hidden;
   }
 
   .aitdiop-btn-left>img {
-    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
     height: 100%;
-    object-fit: cover;
+    padding: 1.25rem 0;
   }
 
   .aitdiop-btn-right {
     width: 12.5rem;
-    padding: 0.625rem 0;
+    position: relative;
+    overflow: hidden;
   }
 
   .aitdiop-btn-right>img {
-    width: 100%;
+    position: absolute;
+    top: 0;
     height: 100%;
-    object-fit: cover;
+    padding: 1.25rem 0;
+    left: 0;
   }
 
   @media only screen and (min-width: 0px) and (max-width: 750px) {
-    
+    .aitdiop-head {
+      padding-left: 1.375rem;
+      padding-top: 3rem;
+    }
+
+    .aitdiop-head-title {
+      font-size: 3.75rem;
+      line-height: 5.1875rem;
+    }
+
+    .aitdiop-head-token {
+      font-size: 1.625rem;
+      line-height: 2.4375rem;
+      margin-top: 2.125rem;
+      padding-right: 1.8125rem;
+    }
+
+    .aitdiop-head-about {
+      margin-top: 3.25rem;
+      font-size: 1.875rem;
+      line-height: 2.875rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .aitdiop-head-connter {
+      font-size: 1.625rem;
+      font-family: Poppins-Regular, Poppins;
+      line-height: 2.4375rem;
+      margin-bottom: 3rem;
+      padding-right: 1.875rem;
+    }
+
+    .aitdiop-btn-left {
+      display: none;
+    }
+
+    .aitdiop-btn-right {
+      display: none;
+    }
+
+    .aitdiop-btn-connter {
+      margin: 0 1.875rem;
+      margin-top: 3rem;
+      padding: 0;
+      margin-bottom: 5.0625rem;
+    }
+
+    .aitdiop-btn-title {
+      padding: 5.625rem 3.0625rem 2.375rem 3.0625rem;
+      margin-bottom: 0rem;
+
+      font-size: 1.75rem;
+      line-height: 2.625rem;
+    }
+
+    .aitdiop-trumpet>img {
+      width: 7.625rem;
+      height: 6.8125rem;
+    }
+
+    .aitdiop-trumpet {
+      left: 1rem;
+      top: 1.375rem;
+    }
+
+    .airdiop-list-img2 {
+      margin: 1.875rem 1rem 1.875rem 1.625rem;
+    }
+
+    .airdiop-list-img {
+      margin: 2.625rem 1rem 2.625rem 1.625rem;
+    }
+
+    .airdiop-list-img:first-child {
+      margin: 1.875rem 1rem 1.875rem 1.625rem;
+    }
+    .airdiop-list-img:last-child {
+      width: 2.375rem;
+      height: 2.9375rem;
+    }
+    .aitdrop-list {
+      margin: 0 1.875rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.625rem;
+      line-height: 2.4375rem;
+      text-align: left;
+    }
+
+    .aitdrop-node {
+      margin: 0 1.875rem;
+      margin-top: 1.4375rem;
+      font-size: 1.5rem;
+      line-height: 2.1875rem;
+    }
+
+    .airdiop-list-btn {
+      width: 7.4375rem;
+      height: 3rem;
+      border-radius: 0.5rem;
+      font-size: 1.5rem;
+      line-height: 2.1875rem;
+      margin-right: 1.625rem;
+      margin-left: 1.9375rem;
+    }
+
+    .aitdiop-table {
+      margin-top: 1.9375rem;
+      margin-bottom: 3rem;
+    }
+
+    .aitdiop-node-img {
+      margin-right: 2rem;
+      width: 4.8125rem;
+      height: 3rem;
+    }
+
+    .aitdiop-node-d {
+      font-size: 1.75rem;
+      line-height: 2.625rem;
+    }
+
+    .airdiop-tr {
+      font-size: 1.625rem;
+      line-height: 2.4375rem;
+    }
+
+    .airdiop-td>img {
+      width: 1.625rem;
+      height: 1.625rem;
+      margin-bottom: 0.625rem;
+      margin-right: 0.375rem;
+    }
+
+    .aitdiop-trumpet-down {
+      bottom: 2.625rem;
+      right: 0.2rem;
+    }
+
+    .aitdiop-trumpet-down img {
+      width: 5.8125rem;
+      height: 5.75rem;
+    }
+
+    .airdiop-td {
+      padding-left: 1.8125rem;
+      padding-right: 0.625rem;
+    }
+
+    .airdiop-td2 {
+      padding: 0 6.375rem;
+    }
   }
 </style>

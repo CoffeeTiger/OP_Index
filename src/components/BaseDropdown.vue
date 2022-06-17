@@ -95,6 +95,6 @@ export default {
 <style lang="scss" scoped>
 .dropdown {
   cursor: pointer;
-  user-select: none;
+  user-select: text;
 }
 </style>
