@@ -157,7 +157,6 @@
         </div>
       </div>
       <div class="ipanel-body1">
-
         <div class="icollapse imargin-bottom-24">
           <div :class="open1?'icollapse-title-contain':'icollapse-title-contain icollapse-title-contain-close'">
             <div class="icollapse-title" @click="show(1)">
@@ -290,8 +289,6 @@
         // } else {
         //   contentDiv[v].style.height = "0px";
         // }
-
-        console.info('create--0001 v=' + v)
 
         if (v == 1) {
           this.open1 = !this.open1

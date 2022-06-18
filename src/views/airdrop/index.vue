@@ -21,7 +21,7 @@
           <img src="../../assets/imgs/news/air-trumpet.png" />
         </div>
         <div class="aitdiop-btn-title">Step-by-Step Guide OpenPublish Airdrop</div>
-       <!-- <div class="aitdrop-list">
+        <!-- <div class="aitdrop-list">
           <img class="airdiop-list-img" src="../../assets/imgs/news/air-niu.svg" />
           Visit our website <a href="https://openpublish.io" target="_blank"> OpenPublish.io </a> daily +1
         </div> -->
@@ -41,10 +41,122 @@
           <img class="airdiop-list-img2" src="../../assets/imgs/news/air-tg.svg" />
           Join on <a href="https://t.me/openpublishTGcn" target="_blank"> Telegram </a> +2
         </div>
-        <div class="aitdrop-list">
-          <img class="airdiop-list-img" src="../../assets/imgs/news/air-niu.svg" />
-          <div class="airdiop-list-con">Refer friends to participate in this event +1</div>
-          <div class="airdiop-list-btn">Share</div>
+        <div class="icollapse imargin-bottom-24">
+          <div :class="open1?'icollapse-title-contain':'icollapse-title-contain icollapse-title-contain-close'">
+            <div class="icollapse-title" @click="listShow(1)">
+              <img class="icollapse-img-i1" src="../../assets/imgs/news/air-niu.svg" />
+              <div class="ititle">Recommend to share with friends to participate in this event +1</div>
+              <div class="iarrow-i1">
+                <img src="../../assets/imgs/arrow-down.png" class="icollepse-arrow" v-if="!open1" />
+                <img src="../../assets/imgs/arrow-up.png" class="icollepse-arrow" v-if="open1" />
+              </div>
+            </div>
+          </div>
+          <div :class="open1?'ibody-open':'ibody-close'">
+            <div class="icontent">
+              <div class="list-content">Share code: 74971522 <img da src="../../assets/imgs/news/air-copy.svg" /></div>
+              <div class="list-content">
+                Share link: https: //huaban.com/boards/74971522
+                <img src="../../assets/imgs/news/air-copy.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="icollapse imargin-bottom-24">
+          <div :class="open2?'icollapse-title-contain':'icollapse-title-contain icollapse-title-contain-close'">
+            <div class="icollapse-title" @click="listShow(2)">
+              <img class="icollapse-img" src="../../assets/imgs/news/air-eth.svg" />
+              <div class="ititle">Submit your Ethereum wallet address and details to the<a href="#">Form</a> .</div>
+              <div class="iarrow">
+                <img src="../../assets/imgs/arrow-down.png" class="icollepse-arrow" v-if="!open2" />
+                <img src="../../assets/imgs/arrow-up.png" class="icollepse-arrow" v-if="open2" />
+              </div>
+            </div>
+          </div>
+          <div :class="open2?'ibody-open':'ibody-close'">
+            <div class="icontent-ic2">
+              <div class="icollapse-ico-list">
+                <div class="icollapse-list">
+                  <p class="icollapse-list-p">Email address*</p>
+                </div>
+                <div class="icollapse-list-input">
+                  <input @blur="inputShow" v-model="email" placeholder="Your email" />
+                </div>
+                <div class="aitdiop-hint" v-if="emailShow">
+                  <img src="../../assets/imgs/news/air-hint.svg" />
+                  <p>This question is required</p>
+                </div>
+              </div>
+              <div class="icollapse-ico-list">
+                <div class="icollapse-list-l1">
+                  <p class="icollapse-list-p">Discord Username*</p>
+                  <p class="icollapse-list-p2">Discord usernames should look like: Your Username#1234</p>
+                </div>
+                <div class="icollapse-list-input">
+                  <input @blur="discordShow" v-model="disName" placeholder="Your answer" />
+                </div>
+                <div class="aitdiop-hint" v-if="disNameShow">
+                  <img src="../../assets/imgs/news/air-hint.svg" />
+                  <p>This question is required</p>
+                </div>
+              </div>
+              <div class="icollapse-ico-list">
+                <div class="icollapse-list-l1">
+                  <p class="icollapse-list-p">Twitter Username*</p>
+                  <p class="icollapse-list-p2">Don't include the @</p>
+                </div>
+                <div class="icollapse-list-input">
+                  <input @blur="twitterShow" v-model="twitterName" placeholder="Your answer" />
+                </div>
+                <div class="aitdiop-hint" v-if="twitterNameShow">
+                  <img src="../../assets/imgs/news/air-hint.svg" />
+                  <p>This question is required</p>
+                </div>
+              </div>
+              <div class="icollapse-ico-list">
+                <div class="icollapse-list-l1">
+                  <p class="icollapse-list-p">Telegram Username*</p>
+                  <p class="icollapse-list-p2">Don't include the @</p>
+                </div>
+                <div class="icollapse-list-input">
+                  <input @blur="teletShow" v-model="teletName" placeholder="Your answer" />
+                </div>
+                <div class="aitdiop-hint" v-if="teletNameShow">
+                  <img src="../../assets/imgs/news/air-hint.svg" />
+                  <p>This question is required</p>
+                </div>
+              </div>
+              <div class="icollapse-ico-list">
+                <div class="icollapse-list-l1">
+                  <p class="icollapse-list-p">YouTube Username*</p>
+                  <p class="icollapse-list-p2">Don't include the @</p>
+                </div>
+                <div class="icollapse-list-input">
+                  <input @blur="youShow" v-model="youName" placeholder="Your answer" />
+                </div>
+                <div class="aitdiop-hint" v-if='youNameShow'>
+                  <img src="../../assets/imgs/news/air-hint.svg" />
+                  <p>This question is required</p>
+                </div>
+              </div>
+              <div class="icollapse-ico-list">
+                <div class="icollapse-list-l1">
+                  <p class="icollapse-list-p">Submit your Ethereum wallet address*</p>
+                </div>
+                <div class="icollapse-list-input">
+                  <input @blur="adrShow" v-model="address" placeholder="Your answer" />
+                </div>
+                <div class="aitdiop-hint" v-if="addressShow">
+                  <img src="../../assets/imgs/news/air-hint.svg" />
+                  <p>This question is required</p>
+                </div>
+              </div>
+            </div>
+            <div class="icollapse-list-btn">
+              <div class="icollapse-list-b1">Submit</div>
+              <div class="icollapse-list-b2">Clear form content</div>
+            </div>
+          </div>
         </div>
         <div class="aitdrop-node">
           Note: Tokens are going to be locked up for a period of 10 months after the end of each airdrop round. After
@@ -114,18 +226,89 @@
             <img src="../../assets/imgs/news/jinbi-1.png" />
           </div>
         </div>
-
       </div>
-
       <div class="aitdiop-btn-right">
         <img src="../../assets/imgs/news/air-right.svg" />
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
+  export default {
+    name: 'homecontent',
+    data() {
+      return {
+        open1: false,
+        open2: false,
+        email: '',
+        emailShow: false,
+        disNameShow: false,
+        disName: '',
+        twitterNameShow: false,
+        twitterName: '',
+        teletNameShow: false,
+        teletName: '',
+        youNameShow: false,
+        youName: '',
+        addressShow:false,
+        address:''
+      }
+    },
+    created() {},
+    methods: {
+      adrShow(){
+        if (this.address == '') {
+          this.addressShow = true
+        } else {
+          this.addressShow = false
+        }
+      },
+      youShow() {
+        if (this.youName == '') {
+          this.youNameShow = true
+        } else {
+          this.youNameShow = false
+        }
+      },
+      teletShow() {
+        if (this.teletName == '') {
+          this.teletNameShow = true
+        } else {
+          this.teletNameShow = false
+        }
+      },
+      twitterShow() {
+        if (this.twitterName == '') {
+          this.twitterNameShow = true
+        } else {
+          this.twitterNameShow = false
+        }
+      },
+      discordShow() {
+        if (this.disName == '') {
+          this.disNameShow = true
+        } else {
+          this.disNameShow = false
+        }
+      },
+      listShow(v) {
+        if (v == 1) {
+          this.open1 = !this.open1
+        } else if (v == 2) {
+          this.open2 = !this.open2
+        }
+      },
+      inputShow() {
+        // var e = '/^\w+@[a-z0-9]+\.[a-z]+$/i'
+        if (this.email == '') {
+          this.emailShow = true
+        } else {
+          this.emailShow = false
+        }
+      }
+    },
+  }
 </script>
 
 <style>
@@ -373,7 +556,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    height: 100%;
+    height: auto;
     padding: 1.25rem 0;
   }
 
@@ -386,9 +569,244 @@
   .aitdiop-btn-right>img {
     position: absolute;
     top: 0;
-    height: 100%;
+    height: auto;
     padding: 1.25rem 0;
     left: 0;
+  }
+
+  .icollapse {
+    width: 100%;
+    /* border: 0.1111rem solid #3E3E3E; */
+    border-radius: 0.625rem;
+    overflow: hidden;
+    font-family: Poppins-Regular, Poppins;
+    background: #303131;
+  }
+
+  .icollapse .icollapse-title-contain {
+    width: 100%;
+    border-top-left-radius: 0.625rem;
+    border-top-right-radius: 0.625rem;
+    background-color: #3E3E3E;
+  }
+
+  .icollapse .icollapse-title-contain-close {
+    border-bottom-left-radius: 0.625rem;
+    border-bottom-right-radius: 0.625rem;
+  }
+
+  .icollapse .icollapse-title-contain .icollapse-title {
+    height: 6.3888rem;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5555rem;
+    font-weight: 400;
+  }
+
+  .icollapse .icollapse-title-contain .icollapse-title .ititle {
+    text-align: left;
+    font-size: 1.5rem;
+    font-family: Poppins-Regular, Poppins;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 2.1875rem;
+  }
+
+  .icollapse .icollapse-title-contain .icollapse-title .ititle-v2 {
+    line-height: 2.2222rem;
+  }
+
+  .icollapse .icollapse-title-contain .icollapse-title .icollepse-arrow {
+    width: 1rem;
+    height: 0.5555rem;
+    margin-right: 1.875rem;
+  }
+
+  .icollapse-img-i1 {
+    width: 2.125rem;
+    height: 2.625rem;
+    margin: 2.125rem 1.5rem 2.125rem 1.875rem;
+  }
+
+  .icollapse-img {
+    width: 2.25rem;
+    height: 2.25rem;
+    margin: 2.125rem 1.5rem 2.125rem 1.875rem;
+  }
+
+  .iarrow-i1 {
+    margin-left: 6.3125rem;
+  }
+
+  .iarrow {
+    margin-left: 1.5rem;
+  }
+
+  .ibody-close {
+    width: 100%;
+    height: 0;
+    background: #3a3a3a;
+    border-radius: 0 0 0.625rem 0.625rem;
+    overflow: hidden;
+    transition: all .3s ease .1s;
+  }
+
+  .ibody-open {
+    width: 100%;
+    background: #303131;
+    border-radius: 0 0 0.625rem 0.625rem;
+    overflow: hidden;
+    transition: all .3s ease .1s;
+  }
+
+  .icontent {
+    padding: 1.75rem 0rem 1.75rem 5.625rem;
+    text-align: left;
+    font-size: 1.125rem;
+    font-family: Poppins-Regular, Poppins;
+    font-weight: 400;
+    color: #2DBBF7;
+    line-height: 1.6875rem;
+  }
+
+  .icontent-ic2 {
+    padding-left: 1.875rem;
+    text-align: left;
+    font-size: 1.5rem;
+    font-family: Poppins-Regular, Poppins;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 2.1875rem;
+  }
+
+  .list-content:first-child {
+    margin-bottom: 1.125rem;
+  }
+
+  .list-content>img {
+    margin-left: 0.6875rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .ititle>a {
+    margin: 0 0.25rem;
+    color: #F7B62D !important;
+  }
+
+  .aitdiop-hint {
+    display: flex;
+    text-align: center;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 1.375rem;
+  }
+
+  .icollapse-list-p {
+    font-size: 1.5rem;
+    font-family: Poppins-Regular, Poppins;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 2.1875rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .icollapse-list-p2 {
+    font-size: 1.125rem;
+    font-family: Poppins-Regular, Poppins;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 1.6875rem;
+    margin-bottom: 0rem;
+  }
+
+
+  .aitdiop-hint>img {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  #userName:-ms-input-placeholder {
+    color: red;
+  }
+
+  .aitdiop-hint>p {
+    margin-bottom: 0px !important;
+    margin-left: 0.5rem;
+    font-size: 1.125rem;
+    font-family: Poppins-Regular, Poppins;
+    font-weight: 400;
+    color: #D81F1F;
+    line-height: 1.6875rem;
+  }
+
+  .icollapse-list {
+    display: flex;
+    margin-bottom: 2.25rem;
+  }
+
+  .icollapse-list-l1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.25rem
+  }
+
+  .icollapse-list-input {
+    margin-right: 12rem;
+    border-bottom: 0.125rem solid #3F4142;
+    outline: none;
+    border-radius: 0;
+  }
+
+  .icollapse-list-input>input {
+    width: 100%;
+    background-color: #303131;
+    color: #ffffff;
+  }
+
+  .icollapse-ico-list {
+    margin-top: 2.25rem;
+  }
+
+  .icollapse-list-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.25rem 0rem 2.3125rem 1.875rem;
+    font-family: Poppins-SemiBold, Poppins;
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+
+  .icollapse-list-b1 {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: 7.4375rem;
+    height: 2.5625rem;
+    background: #F7B62D;
+    border-radius: 0.5rem;
+    justify-content: center;
+    color: #313131;
+    line-height: 1.875rem;
+  }
+
+  .icollapse-list-b2 {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 13.6875rem;
+    height: 2.5625rem;
+    background: #3E3D3D;
+    border-radius: 0.5rem;
+    color: #F7B62D;
+    line-height: 1.875rem;
+    margin-right: 12rem;
   }
 
   @media only screen and (min-width: 0px) and (max-width: 750px) {
@@ -468,10 +886,12 @@
     .airdiop-list-img:first-child {
       margin: 1.875rem 1rem 1.875rem 1.625rem;
     }
+
     .airdiop-list-img:last-child {
       width: 2.375rem;
       height: 2.9375rem;
     }
+
     .aitdrop-list {
       margin: 0 1.875rem;
       margin-bottom: 1.5rem;
