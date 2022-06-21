@@ -82,16 +82,21 @@
           <div>
             <div class="forparters-list-name">Write a message*</div>
             <div class="forparters-list-textarea">
-              <textarea class="textarea-hegiht" cols='270' rows="3" v-model="message" ref="message" maxlength="1000" />
+              <textarea class="textarea-hegiht" cols='270' rows="3" v-model="message" ref="message" maxlength="100" />
+              <div class="textarea-size">100/0</div>
             </div>
           </div>
         </div>
+        <b-modal no-close-on-backdrop hide-footer v-model="captchaShow" id="my-modal">
+          <div class="captcha" id="grecaptcha"></div>
+        </b-modal>
         <div class="forparters-btn">
           <!-- <div>Submit</div> -->
-          <vue-recaptcha ref="recaptcha" @verify="onVerify" @expired="onExpired"
+          <!-- <vue-recaptcha ref="recaptcha" @verify="onVerify" @expired="onExpired"
             sitekey="6Lc7i18gAAAAAHXDQiBsIzx7y1PG6YY1Fd9kd8ZG">
             <button class="ibutton-recaptha">Submit</button>
-          </vue-recaptcha>
+          </vue-recaptcha> -->
+          <div @click="onVerify()" class="ibutton-submit">Submit</div>
         </div>
       </div>
     </div>
@@ -109,22 +114,55 @@
         lastName: '',
         email: '',
         company: '',
-        message: ''
+        message: '',
+        sitekey: "6LeHfl8gAAAAAFH26t3IKu6j9a6naZusSdAJQTOQ",
+        captchaShow: false
       }
     },
     components: {
       'vue-recaptcha': VueRecaptcha
     },
     methods: {
+      submit: function(token) {
+        if (token != undefined) {
+          let that = this
+          let pars = JSON.stringify({
+            response: token,
+            firstName: this.firstName,
+            lastName: this.lastName,
+            email: this.email,
+            company: this.company,
+            message: this.message
+          })
+          api.postAction('/unlogin/partner/add-info', pars, function(res) {
+            if (res.code == 200) {
+              api.iToastClient(that, '90107', 'secondary')
+            } else {
+              api.iToastServer(that, res.code, 'secondary')
+            }
+          })
+          that.captchaShow = false
+        } else {
+          api.iToast(this, 'Please select human-machine authentication', 'secondary')
+        }
+
+      },
+      loaded() {
+        setTimeout(() => {
+          window.grecaptcha.render("grecaptcha", {
+            sitekey: this.sitekey,
+            callback: this.submit
+          });
+        }, 200);
+      },
       onEvent() {
         this.$refs.recaptcha.execute();
       },
       onSubmit: function() {
         this.$refs.invisibleRecaptcha.execute()
       },
-      onVerify: function(response) {
-        //add ajax send token to service
-
+      onVerify: function() {
+        this.loaded();
         if (api.empty(this.firstName)) {
           api.iToastClient(this, '90101', 'secondary')
           this.$refs.firstName.focus()
@@ -154,24 +192,7 @@
           this.$refs.message.focus()
           return
         }
-
-        let that = this
-        let pars = JSON.stringify({
-          response: response,
-          firstName: this.firstName,
-          lastName: this.lastName,
-          email: this.email,
-          company: this.company,
-          message: this.message
-        })
-        api.postAction('/unlogin/partner/add_info', pars, function(res) {
-          if (res.code == 200) {
-            api.iToastClient(that, '90107', 'secondary')
-          } else {
-            api.iToastServer(that, res.code, 'secondary')
-          }
-        })
-
+        this.captchaShow = true
       },
       onExpired: function() {
         console.log('Expired')
@@ -189,24 +210,42 @@
   .grecaptcha-badge {
     display: none;
   }
-
   .ibutton-recaptha {
-    background-color: #ffffff00;
+    background-color: #F7B62D;
     width: 11.0625rem;
     height: 3.125rem;
-    border: 0;
     color: #000000;
+    border: none
+  }
+
+  .modal-header {
+    border-bottom: 0rem;
+  }
+
+  .modal.show .modal-dialog {
+    top: 12rem;
   }
 </style>
 <style scoped="scoped">
+  .modal-footer {
+    display: none;
+  }
+
+  .textarea-size {
+    color: #b3b3b3;
+    margin-left: 0.625rem;
+  }
+
   .forparters-list-textarea {
+    display: flex;
     width: 36.25rem;
     margin-right: 0rem;
+    align-items: flex-end;
   }
 
   .forparters-list-textarea>textarea {
     width: 100%;
-    margin-top: 3.75rem;
+    margin-top: 2.75rem;
     border-bottom: 0.0625rem solid #D8D8D8;
     outline: none;
     border-radius: 0;
@@ -282,6 +321,7 @@
   }
 
   .forparters-bottom {
+    /* position: relative; */
     margin: 2.875rem 2.875rem 0;
     background-color: #ffffff;
     width: calc(100% - 5.75rem);
@@ -353,6 +393,19 @@
     padding-left: 2.5rem;
     padding-right: 28.4375rem
   }
+
+  .ibutton-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .captcha {
+    display: flex;
+    justify-content: center;
+  }
+
 
   @media only screen and (min-width: 0px) and (max-width: 750px) {
     .ibutton-recaptha {

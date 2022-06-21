@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 8</title>
+    <g id="网页再来一版" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="6-Airdrop" transform="translate(-579.000000, -1509.000000)">
+            <g id="编组-8" transform="translate(579.000000, 1509.000000)">
+                <circle id="椭圆形" stroke="#FFFFFF" stroke-width="2.25" cx="18" cy="18" r="16.875"></circle>
+                <g id="编组-2" transform="translate(11.250000, 5.625000)" fill-rule="nonzero">
+                    <polygon id="路径" fill="#878585" points="6.74999998 0 6.59728507 0.563867486 6.59728507 16.9289175 6.74999998 17.0948114 13.5 12.6045009"></polygon>
+                    <polygon id="路径" fill="#FFFFFF" points="6.74999998 0 0 12.6045009 6.74999998 17.0948114 6.74999998 9.15167222"></polygon>
+                    <polygon id="路径" fill="#828080" points="6.74999998 18.5328454 6.66600679 18.6471661 6.66600679 24.4766618 6.74999998 24.75 13.5 14.0451136"></polygon>
+                    <polygon id="路径" fill="#FFFFFF" points="6.74999998 24.7491405 6.74999998 18.5328454 0 14.0451136"></polygon>
+                    <polygon id="路径" fill="#464444" points="6.74999998 17.0948114 13.5 12.6045009 6.74999998 9.15167222"></polygon>
+                    <polygon id="路径" fill="#848282" points="0 12.6045009 6.74999998 17.0948114 6.74999998 9.15167222"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

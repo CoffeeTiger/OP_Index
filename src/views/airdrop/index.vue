@@ -54,10 +54,28 @@
           </div>
           <div :class="open1?'ibody-open':'ibody-close'">
             <div class="icontent">
-              <div class="list-content">Share code: 74971522 <img da src="../../assets/imgs/news/air-copy.svg" /></div>
-              <div class="list-content">
-                Share link: https: //huaban.com/boards/74971522
-                <img src="../../assets/imgs/news/air-copy.svg" />
+              <div class="icollapse-addres-list">
+                <div class="icollapse-list-l1">
+                  <p class="icollapse-addres-p">Email address*</p>
+                </div>
+                <div class="recInput">
+                  <div class="icollapse-recInput">
+                    <input @blur="recmailShow" v-model="recMail" placeholder="www.zuoxiaotang123@gmail.com" />
+                  </div>
+                  <div class="icollapse-link" @click="shareClick">Generate link</div>
+                </div>
+                <div class="aitdiop-hint" v-if="recShow">
+                  <img src="../../assets/imgs/news/air-hint.svg" />
+                  <p>This question is required</p>
+                </div>
+                <div class="aitdiop-hint" v-if="mustRecShow">
+                  <img src="../../assets/imgs/news/air-hint.svg" />
+                  <p>Must be a valid email address</p>
+                </div>
+              </div>
+              <div class="list-content" v-if="shareShow">
+                <div ref="link">Share link: https://openpublish.io/airdrop/---</div>
+                <img @click="copyAddress(2)" src="../../assets/imgs/news/air-copy.svg" />
               </div>
             </div>
           </div>
@@ -66,7 +84,7 @@
           <div :class="open2?'icollapse-title-contain':'icollapse-title-contain icollapse-title-contain-close'">
             <div class="icollapse-title" @click="listShow(2)">
               <img class="icollapse-img" src="../../assets/imgs/news/air-eth.svg" />
-              <div class="ititle">Submit your Ethereum wallet address and details to the<a href="#">Form</a> .</div>
+              <div class="ititle">Submit your Ethereum wallet address and details to the Form.</div>
               <div class="iarrow">
                 <img src="../../assets/imgs/arrow-down.png" class="icollepse-arrow" v-if="!open2" />
                 <img src="../../assets/imgs/arrow-up.png" class="icollepse-arrow" v-if="open2" />
@@ -85,6 +103,10 @@
                 <div class="aitdiop-hint" v-if="emailShow">
                   <img src="../../assets/imgs/news/air-hint.svg" />
                   <p>This question is required</p>
+                </div>
+                <div class="aitdiop-hint" v-if="mustShow">
+                  <img src="../../assets/imgs/news/air-hint.svg" />
+                  <p>Must be a valid email address</p>
                 </div>
               </div>
               <div class="icollapse-ico-list">
@@ -152,9 +174,16 @@
                 </div>
               </div>
             </div>
+            <b-modal v-model="modalShow" no-close-on-backdrop hide-footer title="BootstrapVue">
+              <div class="captcha" id="grecaptcha"></div>
+            </b-modal>
             <div class="icollapse-list-btn">
-              <div class="icollapse-list-b1">Submit</div>
-              <div class="icollapse-list-b2">Clear form content</div>
+              <div class="icollapse-list-b1">
+                <div @click="showModal()" class="ibutton-recaptha">Submit</div>
+              </div>
+              <div class="icollapse-list-b2" @mouseover="mouseOver" @mouseleave="mouseLeave" :style="active">
+                <p ref="acp">Clear form content</p>
+              </div>
             </div>
           </div>
         </div>
@@ -168,7 +197,7 @@
         <div class="aitdiop-table-head">
           <div class="aitdiop-node-title">
             <img class="aitdiop-node-img" src="../../assets/imgs/news/air-jinbi.png">
-            <div class="aitdiop-node-d">Rewards by ranking on June 26</div>
+            <div class="aitdiop-node-d">Rewards by ranking on xx</div>
           </div>
           <table class="aitdiop-table" border="1">
             <tr class="airdiop-tr">
@@ -183,7 +212,7 @@
             </tr>
             <tr class="airdiop-tr">
               <td class="airdiop-td">
-                <img src="../../assets/imgs/news/air-list2.svg" />Article 2
+                <img src="../../assets/imgs/news/air-list2.svg" />2nd Place
               </td>
               <td class="airdiop-td2">$1,000</td>
             </tr>
@@ -235,6 +264,7 @@
 </template>
 
 <script>
+  import api from '../../util/network.js'
   export default {
     name: 'homecontent',
     data() {
@@ -251,13 +281,86 @@
         teletName: '',
         youNameShow: false,
         youName: '',
-        addressShow:false,
-        address:''
+        addressShow: false,
+        address: '',
+        active: "",
+        mustShow: false,
+        recMail: "",
+        recShow: false,
+        mustRecShow: false,
+        shareShow: false,
+        modalShow: false,
+        sitekey: "6LeHfl8gAAAAAFH26t3IKu6j9a6naZusSdAJQTOQ",
       }
     },
     created() {},
     methods: {
-      adrShow(){
+      loaded() {
+        setTimeout(() => {
+          window.grecaptcha.render("grecaptcha", {
+            sitekey: this.sitekey,
+            callback: this.submit
+          });
+        }, 200);
+      },
+      showModal() {
+        this.loaded();
+        // this.modalShow = true
+      },
+      submit: function(token) {
+        console.log(token, '====-098')
+      },
+      shareClick() {
+        var emls = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
+        if (this.recMail == "") {
+          this.recShow = true
+          this.mustRecShow = false
+          this.shareShow = false
+        } else if (!emls.test(this.recMail)) {
+          this.recShow = false
+          this.mustRecShow = true
+          this.shareShow = false
+        } else if (emls.test(this.recMail)) {
+          this.recShow = false
+          this.mustRecShow = false
+          this.shareShow = true
+        }
+      },
+      mouseOver() {
+        this.active =
+          "background-color:#3E3D3D;";
+        var acps = this.$refs.acp
+      },
+      mouseLeave() {
+        this.active = "";
+      },
+      copyAddress(e) {
+        let that = this
+        if (e == 1) {
+          this.$copyText(this.$refs.code).then(function(e) {
+            api.iToast(that, 'Copy successful.', 'secondary')
+          }, function(e) {})
+        } else if (e == 2) {
+          this.$copyText(this.$refs.link).then(function(e) {
+            api.iToast(that, 'Copy successful.', 'secondary')
+          }, function(e) {})
+        }
+
+      },
+      recmailShow() {
+        var emls = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
+        if (this.recMail == '') {
+          this.recShow = true
+          this.mustRecShow = false
+        } else if (!emls.test(this.recMail)) {
+          this.recShow = false
+          this.mustRecShow = true
+        } else if (emls.test(this.recMail)) {
+          this.recShow = false
+          this.mustRecShow = false
+        }
+      },
+      adrShow() {
         if (this.address == '') {
           this.addressShow = true
         } else {
@@ -300,18 +403,28 @@
         }
       },
       inputShow() {
-        // var e = '/^\w+@[a-z0-9]+\.[a-z]+$/i'
+        var eml = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
         if (this.email == '') {
           this.emailShow = true
-        } else {
+          this.mustShow = false
+        } else if (!eml.test(this.email)) {
           this.emailShow = false
+          this.mustShow = true
+        } else if (eml.test(this.email)) {
+          this.emailShow = false
+          this.mustShow = false
         }
       }
     },
   }
 </script>
 
-<style>
+<style scoped="scoped">
+  .ibutton-recaptha {
+    display: flex;
+    justify-content: center;
+  }
+
   .airdiop {
     display: flex;
     flex-direction: column;
@@ -580,7 +693,7 @@
     border-radius: 0.625rem;
     overflow: hidden;
     font-family: Poppins-Regular, Poppins;
-    background: #303131;
+    /* background: #303131; */
   }
 
   .icollapse .icollapse-title-contain {
@@ -648,7 +761,7 @@
   .ibody-close {
     width: 100%;
     height: 0;
-    background: #3a3a3a;
+    background: #303131;
     border-radius: 0 0 0.625rem 0.625rem;
     overflow: hidden;
     transition: all .3s ease .1s;
@@ -663,7 +776,7 @@
   }
 
   .icontent {
-    padding: 1.75rem 0rem 1.75rem 5.625rem;
+    padding: 2.125rem 1.4375rem 2.875rem 1.875rem;
     text-align: left;
     font-size: 1.125rem;
     font-family: Poppins-Regular, Poppins;
@@ -682,18 +795,23 @@
     line-height: 2.1875rem;
   }
 
-  .list-content:first-child {
-    margin-bottom: 1.125rem;
+  .list-content {
+    display: flex;
+    margin-top: 4.0625rem;
   }
 
+  /* .list-content:first-child {
+    margin-bottom: 1.125rem;
+  } */
+
   .list-content>img {
-    margin-left: 0.6875rem;
+    margin-left: 3rem;
     width: 1.5rem;
     height: 1.5rem;
   }
 
   .ititle>a {
-    margin: 0 0.25rem;
+    margin-left: 0.45rem;
     color: #F7B62D !important;
   }
 
@@ -766,7 +884,26 @@
     width: 100%;
     background-color: #303131;
     color: #ffffff;
+    font-size: 1.5rem;
   }
+
+  input::-webkit-input-placeholder {
+    color: #3F4142;
+
+  }
+
+  input:-moz-placeholder {
+    color: #3F4142;
+  }
+
+  input::-moz-placeholder {
+    color: #3F4142;
+  }
+
+  input:-ms-input-placeholder {
+    color: #3F4142;
+  }
+
 
   .icollapse-ico-list {
     margin-top: 2.25rem;
@@ -793,6 +930,7 @@
     justify-content: center;
     color: #313131;
     line-height: 1.875rem;
+    font-size: 1.25rem;
   }
 
   .icollapse-list-b2 {
@@ -802,11 +940,84 @@
     justify-content: center;
     width: 13.6875rem;
     height: 2.5625rem;
-    background: #3E3D3D;
+    background: #303131;
     border-radius: 0.5rem;
     color: #F7B62D;
     line-height: 1.875rem;
     margin-right: 12rem;
+  }
+
+  .icollapse-list-b2>p {
+    margin-bottom: 0rem;
+    font-size: 1.25rem;
+    font-family: Poppins-Regular, Poppins;
+    font-weight: 400;
+    color: #F7B62D;
+    line-height: 1.875rem;
+  }
+
+  .list-content-link {
+    margin-bottom: 0rem;
+    font-size: 1.125rem !important;
+    font-family: Poppins-Regular, Poppins;
+    font-weight: 400;
+    color: #49A5F7;
+    line-height: 1.6875rem;
+  }
+
+  .icollapse-addres-list {
+    margin-top: 0rem;
+  }
+
+  .icollapse-addres-p {
+    font-size: 1.5rem;
+    line-height: 2.1875rem;
+    margin-bottom: 0rem;
+    font-family: Poppins-Regular, Poppins;
+    font-weight: 400;
+    color: #FFFFFF;
+  }
+
+  .icollapse-link {
+    width: 13.125rem;
+    height: 2.1875rem;
+    background: #F7B62D;
+    border-radius: 0.625rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 1.25rem;
+    font-family: Poppins-SemiBold, Poppins;
+    font-weight: 600;
+    color: #313131;
+    padding: 0rem 0.8125rem;
+  }
+
+  .recInput {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+  }
+
+  .icollapse-recInput {
+    width: 100%;
+    border-bottom: 0.125rem solid #3F4142;
+    margin-right: 0.4375rem;
+    outline: none;
+    border-radius: 0;
+  }
+
+  .icollapse-recInput>input {
+    width: 100%;
+    background-color: #303131;
+    color: #ffffff;
+    font-size: 1.5rem;
+  }
+
+  .captcha {
+    display: flex;
+    justify-content: center;
   }
 
   @media only screen and (min-width: 0px) and (max-width: 750px) {
@@ -900,9 +1111,30 @@
       text-align: left;
     }
 
+    .icollapse {
+      width: calc(100% - 3.75rem);
+      margin: 0 1.875rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .iarrow-i1 {
+      margin-left: 3.3125rem;
+    }
+
+    .icontent {
+      font-size: 1.375rem;
+      line-height: 2.0625rem;
+      margin: 1.75rem 0rem 1.75rem 1.625rem;
+      padding: 0
+    }
+
+    /* .list-content:first-child {
+      margin-bottom: 0.875rem;
+    } */
+
     .aitdrop-node {
       margin: 0 1.875rem;
-      margin-top: 1.4375rem;
+      margin-top: 0.25rem;
       font-size: 1.5rem;
       line-height: 2.1875rem;
     }
@@ -962,6 +1194,89 @@
 
     .airdiop-td2 {
       padding: 0 6.375rem;
+    }
+
+    .list-content>img {
+      margin-left: 0.625rem;
+      margin-top: 0.25rem;
+    }
+
+    .icollapse .icollapse-title-contain .icollapse-title .ititle {
+      font-size: 1.625rem;
+      line-height: 2.4375rem
+    }
+
+    .icollapse-img-i1 {
+      margin: 2.625rem 1.5rem 2.625rem 1.875rem;
+    }
+
+    .icollapse .icollapse-title-contain .icollapse-title {
+      height: 7.8125rem;
+    }
+
+    .icollapse-img {
+      width: 2.25rem;
+      height: 2.25rem;
+      margin: 2.75rem 1.5rem 2.75rem 1.875rem;
+    }
+
+    .list-content-link {
+      margin-bottom: 0rem;
+      font-size: 1.375rem !important
+    }
+
+    .icollapse-list-p {
+      font-size: 1.5rem;
+      line-height: 2.1875rem;
+      margin-bottom: 0rem;
+    }
+
+    .icollapse-list-input {
+      margin-right: 1.875rem;
+    }
+
+    .icollapse-list-input>input {
+      font-size: 1.75rem;
+    }
+
+    .aitdiop-hint>p {
+      margin-bottom: 0px !important;
+      font-size: 1.375rem;
+      line-height: 2.0625rem;
+    }
+
+    .icollapse-list-p2 {
+      font-size: 1.375rem;
+      line-height: 2.0625rem;
+      margin-bottom: 0rem;
+      color: #979797;
+    }
+
+    .icollapse-list-b1 {
+      width: 11.0625rem;
+      height: 3.125rem;
+      border-radius: 0.625rem;
+      font-size: 1.625rem;
+      line-height: 2.4375rem;
+    }
+
+    .icollapse-list-b2 {
+      width: 16.6875rem;
+      height: 3.125rem;
+      border-radius: 0.625rem;
+      line-height: 2.4375rem;
+      margin-right: 1.5rem;
+    }
+
+    .icollapse-list-b2>p {
+      font-size: 1.625rem;
+      line-height: 2.4375rem;
+    }
+
+    .icollapse-link {
+      width: 14.125rem;
+      height: 2.1875rem;
+      margin-right: 1rem;
     }
   }
 </style>

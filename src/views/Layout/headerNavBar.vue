@@ -10,9 +10,9 @@
         <!--  <b-navbar-toggle target="nav-collapse"></b-navbar-toggle> -->
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
-            <b-nav-item to="/forParters" class="inav-item" @click="title(1)">
+            <b-nav-item to="/forPartner" class="inav-item" @click="title(1)">
               <span class="nav-link-inner--text i-nav-link-font" :class="titlechk==1?'i-nav-link-font-check':''">For
-                partners</span>
+                partner</span>
             </b-nav-item>
             <b-nav-item to="/airdrop" class="inav-item" @click="title(5)">
               <span class="nav-link-inner--text i-nav-link-font"
@@ -42,7 +42,7 @@
         <div v-if="menuShow" class="menu-ul-u2">
           <ul>
             <li @click="menuClick">
-              <router-link class="menu-rotlink" to="/forParters">For partners</router-link>
+              <router-link class="menu-rotlink" to="/forPartner">For partner</router-link>
             </li>
             <li @click="menuClick">
               <router-link class="menu-rotlink" to="/airdrop">Airdrop</router-link>

@@ -4,7 +4,7 @@ const routes = [
       path: '/',
       name: 'home',
       component: () => import('../views/home/home.vue')
-    }, */ 
+    }, */
     {
       path: '/',
       name: 'index',
@@ -17,9 +17,9 @@ const routes = [
       component: () => import('../views/about/about.vue')
     },
     {
-      path: '/forParters',
-      name: 'forParters',
-      component: () => import('../views/forParters/index.vue')
+      path: '/forPartner',
+      name: 'forPartner',
+      component: () => import('../views/forPartner/index.vue')
     },
     {
       path: '/reward',
@@ -35,6 +35,11 @@ const routes = [
       path: '/test',
       name: 'test',
       component: () => import('../views/test/test.vue')
+    },
+    {
+      path: '/testv2',
+      name: 'testv2',
+      component: () => import('../views/test/testv2.vue')
     },
     /* {
       path: '/homepage',
