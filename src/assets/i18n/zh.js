@@ -251,13 +251,20 @@ module.exports = {
     90007: 'The wallet network has changed',
     90008: 'copy successfully',
 
-    90101:'Please Enter First Name',
-    90102:'Please Enter Last Name',
-    90103:'Please Enter Email',
-    90104:'Please Enter Company Info',
-    90105:'Please Enter messages',
-    90106:'Please enter a valid email',
-    90107:'Submit successfully',
+    90101: 'Please Enter First Name',
+    90102: 'Please Enter Last Name',
+    90103: 'Please Enter Email',
+    90104: 'Please Enter Company Info',
+    90105: 'Please Enter messages',
+    90106: 'Please enter a valid email',
+    90107: 'Submit successfully',
+
+    90201: 'Please input the email address',
+    90202: 'Please input the discord username',
+    90203: 'Please input the twitter username',
+    90204: 'Please input the telegram username',
+    90205: 'Please input the youTube username',
+    90206: 'Please input the ethereum wallet address',
 
   },
   server: {
@@ -284,7 +291,12 @@ module.exports = {
     10997: 'The number of free upload files exceeds the maximum limit',
     10998: 'Failed to upload file',
     10999: 'Signature verification failed',
-
-    10989:'Verification failure',
+    10989: 'Verification failure',
+    1098701: 'Action data already exists email',
+    1098702: 'Action data already exists discord',
+    1098703: 'Action data already exists twitter',
+    1098704: 'Action data already exists telegram',
+    1098705: 'Action data already exists youtube',
+    1098706: 'Action data already exists ethereumWallet'
   }
 }

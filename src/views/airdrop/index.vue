@@ -60,9 +60,9 @@
                 </div>
                 <div class="recInput">
                   <div class="icollapse-recInput">
-                    <input @blur="recmailShow" v-model="recMail" placeholder="www.zuoxiaotang123@gmail.com" />
+                    <input @blur="recmailShow" v-model="recMail" maxlength="200" placeholder="Your email" />
                   </div>
-                  <div class="icollapse-link" @click="shareClick">Generate link</div>
+                  <div @click="onVerify" class="ib-button">Generate link</div>
                 </div>
                 <div class="aitdiop-hint" v-if="recShow">
                   <img src="../../assets/imgs/news/air-hint.svg" />
@@ -74,8 +74,12 @@
                 </div>
               </div>
               <div class="list-content" v-if="shareShow">
-                <div ref="link">Share link: https://openpublish.io/airdrop/---</div>
-                <img @click="copyAddress(2)" src="../../assets/imgs/news/air-copy.svg" />
+                <div>Share link: </div>
+                <div class="list-content-img">
+                  <div ref="link">https://openpublish.io/airdrop/{{resultCode}}</div>
+                  <img @click="copyAddress(2)" src="../../assets/imgs/news/air-copy.svg" />
+                </div>
+
               </div>
             </div>
           </div>
@@ -98,7 +102,8 @@
                   <p class="icollapse-list-p">Email address*</p>
                 </div>
                 <div class="icollapse-list-input">
-                  <input @blur="inputShow" v-model="email" placeholder="Your email" />
+                  <input @blur="inputShow" maxlength="200" v-model="yourEmail" ref="yourEmail"
+                    placeholder="Your email" />
                 </div>
                 <div class="aitdiop-hint" v-if="emailShow">
                   <img src="../../assets/imgs/news/air-hint.svg" />
@@ -115,7 +120,8 @@
                   <p class="icollapse-list-p2">Discord usernames should look like: Your Username#1234</p>
                 </div>
                 <div class="icollapse-list-input">
-                  <input @blur="discordShow" v-model="disName" placeholder="Your answer" />
+                  <input @blur="discordShow" maxlength="200" v-model="disName" ref="disName"
+                    placeholder="Your answer" />
                 </div>
                 <div class="aitdiop-hint" v-if="disNameShow">
                   <img src="../../assets/imgs/news/air-hint.svg" />
@@ -128,7 +134,8 @@
                   <p class="icollapse-list-p2">Don't include the @</p>
                 </div>
                 <div class="icollapse-list-input">
-                  <input @blur="twitterShow" v-model="twitterName" placeholder="Your answer" />
+                  <input @blur="twitterShow" v-model="twitterName" ref="twitterName" maxlength="200"
+                    placeholder="Your answer" />
                 </div>
                 <div class="aitdiop-hint" v-if="twitterNameShow">
                   <img src="../../assets/imgs/news/air-hint.svg" />
@@ -141,7 +148,8 @@
                   <p class="icollapse-list-p2">Don't include the @</p>
                 </div>
                 <div class="icollapse-list-input">
-                  <input @blur="teletShow" v-model="teletName" placeholder="Your answer" />
+                  <input @blur="teletShow" v-model="teletName" ref="teletName" maxlength="200"
+                    placeholder="Your answer" />
                 </div>
                 <div class="aitdiop-hint" v-if="teletNameShow">
                   <img src="../../assets/imgs/news/air-hint.svg" />
@@ -154,7 +162,7 @@
                   <p class="icollapse-list-p2">Don't include the @</p>
                 </div>
                 <div class="icollapse-list-input">
-                  <input @blur="youShow" v-model="youName" placeholder="Your answer" />
+                  <input @blur="youShow" v-model="youName" maxlength="200" ref="youName" placeholder="Your answer" />
                 </div>
                 <div class="aitdiop-hint" v-if='youNameShow'>
                   <img src="../../assets/imgs/news/air-hint.svg" />
@@ -166,22 +174,27 @@
                   <p class="icollapse-list-p">Submit your Ethereum wallet address*</p>
                 </div>
                 <div class="icollapse-list-input">
-                  <input @blur="adrShow" v-model="address" placeholder="Your answer" />
+                  <input @blur="adrShow" v-model="address" ref="address" maxlength="200" placeholder="Your answer" />
                 </div>
                 <div class="aitdiop-hint" v-if="addressShow">
                   <img src="../../assets/imgs/news/air-hint.svg" />
                   <p>This question is required</p>
                 </div>
+                <div class="aitdiop-hint" v-if="airShow">
+                  <img src="../../assets/imgs/news/air-hint.svg" />
+                  <p>Must be a valid address</p>
+                </div>
               </div>
             </div>
-            <b-modal v-model="modalShow" no-close-on-backdrop hide-footer title="BootstrapVue">
-              <div class="captcha" id="grecaptcha"></div>
+            <b-modal v-model="modalShow" no-close-on-backdrop hide-footer title="">
+              <div class="captcha" hl="en" id="grecaptcha"></div>
             </b-modal>
             <div class="icollapse-list-btn">
               <div class="icollapse-list-b1">
-                <div @click="showModal()" class="ibutton-recaptha">Submit</div>
+                <div @click="showModal()" class="ibutton-submit">Submit</div>
               </div>
-              <div class="icollapse-list-b2" @mouseover="mouseOver" @mouseleave="mouseLeave" :style="active">
+              <div class="icollapse-list-b2" @click="clear()" @mouseover="mouseOver" @mouseleave="mouseLeave"
+                :style="active">
                 <p ref="acp">Clear form content</p>
               </div>
             </div>
@@ -265,13 +278,20 @@
 
 <script>
   import api from '../../util/network.js'
+  import {
+    VueRecaptcha
+  } from 'vue-recaptcha';
   export default {
     name: 'homecontent',
+    components: {
+      'vue-recaptcha': VueRecaptcha
+    },
+
     data() {
       return {
         open1: false,
         open2: false,
-        email: '',
+        yourEmail: '',
         emailShow: false,
         disNameShow: false,
         disName: '',
@@ -291,10 +311,31 @@
         shareShow: false,
         modalShow: false,
         sitekey: "6LeHfl8gAAAAAFH26t3IKu6j9a6naZusSdAJQTOQ",
+        resultCode: '',
+        fatherCode: '',
+        airShow: false
       }
     },
-    created() {},
+    created() {
+      this.getUrl()
+    },
     methods: {
+      clear() {
+        this.yourEmail = "",
+          this.disName = "",
+          this.twitterName = "",
+          this.teletName = "",
+          this.youName = "",
+          this.address = ""
+      },
+      getUrl() {
+        let that = this
+        var url = window.location.href
+        if (url.indexOf("/", 28) > -1) {
+          var num = url.indexOf("/", 28)
+          that.fatherCode = url.substring(num + 1)
+        }
+      },
       loaded() {
         setTimeout(() => {
           window.grecaptcha.render("grecaptcha", {
@@ -304,26 +345,89 @@
         }, 200);
       },
       showModal() {
+        if (api.empty(this.yourEmail)) {
+          api.iToastClient(this, '90201', 'secondary')
+          this.$refs.yourEmail.focus()
+          return
+        } else if (api.empty(this.disName)) {
+          api.iToastClient(this, '90202', 'secondary')
+          this.$refs.disName.focus()
+          return
+        } else if (api.empty(this.twitterName)) {
+          api.iToastClient(this, '90203', 'secondary')
+          this.$refs.twitterName.focus()
+          return
+        } else if (api.empty(this.teletName)) {
+          api.iToastClient(this, '90204', 'secondary')
+          this.$refs.teletName.focus()
+          return
+        } else if (api.empty(this.youName)) {
+          api.iToastClient(this, '90205', 'secondary')
+          this.$refs.youName.focus()
+          return
+        } else if (api.empty(this.address)) {
+          api.iToastClient(this, '90206', 'secondary')
+          this.$refs.address.focus()
+          return
+        }
         this.loaded();
-        // this.modalShow = true
+        this.modalShow = true
       },
       submit: function(token) {
-        console.log(token, '====-098')
+        let that = this
+        var pars = {
+          discord: that.disName.trim(),
+          email: that.yourEmail.trim(),
+          ethereumWallet: that.address.trim(),
+          fatherShareCode: that.fatherCode,
+          response: token,
+          telegram: that.teletName.trim(),
+          twitter: that.twitterName.trim(),
+          youtube: that.youName.trim()
+        }
+        api.postAction('/unlogin/airdrop/submit-usernames', pars, function(res) {
+          if (res.success == true) {
+            api.iToast(that, 'Submitted successfully', 'secondary')
+            that.modalShow = false
+          } else {
+            api.iToastServer(that, res.code, 'secondary')
+            that.modalShow = false
+          }
+        })
       },
-      shareClick() {
+      onVerify() {
+        let that = this
         var emls = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
-        if (this.recMail == "") {
-          this.recShow = true
-          this.mustRecShow = false
-          this.shareShow = false
-        } else if (!emls.test(this.recMail)) {
-          this.recShow = false
-          this.mustRecShow = true
-          this.shareShow = false
-        } else if (emls.test(this.recMail)) {
-          this.recShow = false
-          this.mustRecShow = false
-          this.shareShow = true
+        if (that.recMail == "") {
+          that.recShow = true
+          that.mustRecShow = false
+          that.shareShow = false
+        } else if (!emls.test(that.recMail)) {
+          that.recShow = false
+          that.mustRecShow = true
+          that.shareShow = false
+        } else if (emls.test(that.recMail)) {
+          that.recShow = false
+          that.mustRecShow = false
+          var pars = {
+            discord: "",
+            email: that.recMail.trim(),
+            ethereumWallet: "",
+            fatherShareCode: that.fatherCode,
+            response: "",
+            telegram: "",
+            twitter: "",
+            youtube: ""
+          }
+          api.postAction('/unlogin/airdrop/generate-link', pars, function(res) {
+            if (res.success == true) {
+              that.resultCode = res.result
+              that.shareShow = true
+            } else {
+              api.iToastServer(that, res.code, 'secondary')
+              that.shareShow = false
+            }
+          })
         }
       },
       mouseOver() {
@@ -361,10 +465,16 @@
         }
       },
       adrShow() {
+        var adds = /^0x[0-9a-fA-F]{40}$/
         if (this.address == '') {
           this.addressShow = true
-        } else {
+          this.airShow = false
+        } else if (!adds.test(this.address)) {
           this.addressShow = false
+          this.airShow = true
+        } else if (adds.test(this.address)) {
+          this.addressShow = false
+          this.airShow = false
         }
       },
       youShow() {
@@ -407,10 +517,10 @@
         if (this.email == '') {
           this.emailShow = true
           this.mustShow = false
-        } else if (!eml.test(this.email)) {
+        } else if (!eml.test(this.yourEmail)) {
           this.emailShow = false
           this.mustShow = true
-        } else if (eml.test(this.email)) {
+        } else if (eml.test(this.yourEmail)) {
           this.emailShow = false
           this.mustShow = false
         }
@@ -418,9 +528,42 @@
     },
   }
 </script>
+<style>
+  .grecaptcha-badge {
+    display: none;
+  }
 
-<style scoped="scoped">
   .ibutton-recaptha {
+    background-color: #F7B62D;
+    width: 11.0625rem;
+    height: 3.125rem;
+    color: #000000;
+    outline: none;
+  }
+</style>
+<style scoped="scoped">
+  .ib-button {
+    width: 14.125rem;
+    height: 2.1875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.25rem;
+    font-family: Poppins-SemiBold, Poppins;
+    font-weight: 600;
+    line-height: 1.875rem;
+    background: #F7B62D;
+    border-radius: 0.625rem;
+    border: #F7B62D;
+    color: #313131;
+  }
+
+  .ib-button:focus {
+    outline: none;
+  }
+
+  .ibutton-submit {
     display: flex;
     justify-content: center;
   }
@@ -796,7 +939,7 @@
   }
 
   .list-content {
-    display: flex;
+    /* display: flex; */
     margin-top: 4.0625rem;
   }
 
@@ -979,7 +1122,7 @@
   }
 
   .icollapse-link {
-    width: 13.125rem;
+    width: 11.125rem;
     height: 2.1875rem;
     background: #F7B62D;
     border-radius: 0.625rem;
@@ -1013,6 +1156,20 @@
     background-color: #303131;
     color: #ffffff;
     font-size: 1.5rem;
+    line-height: 2.1875rem;
+  }
+
+  .list-content-img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.125rem;
+
+  }
+
+  .list-content-img>img {
+    width: 1.625rem;
+    height: 1.625rem;
   }
 
   .captcha {
@@ -1021,6 +1178,26 @@
   }
 
   @media only screen and (min-width: 0px) and (max-width: 750px) {
+    .list-content-img {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.25rem;
+
+    }
+
+    .list-content-img>img {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 1.25rem;
+    }
+
+    .ib-button {
+      margin-right: 1.25rem;
+      font-size: 1.25rem;
+      line-height: 2.125rem;
+    }
+
     .aitdiop-head {
       padding-left: 1.375rem;
       padding-top: 3rem;
@@ -1274,7 +1451,7 @@
     }
 
     .icollapse-link {
-      width: 14.125rem;
+      width: 11.125rem;
       height: 2.1875rem;
       margin-right: 1rem;
     }

@@ -598,7 +598,7 @@
     color: #FFFFFF;
     line-height: 4.875rem;
     text-align: center;
-    letter-spacing: -0.07rem;
+    letter-spacing: -0.1rem;
   }
 
   .reward-title>a {

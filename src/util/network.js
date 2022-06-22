@@ -4,7 +4,7 @@ import i18n from '../i18n'
 
 export default {
 
-  /* Property_URL: 'http://192.168.10.228:9999', */
+  // Property_URL: 'http://192.168.10.36:9990',
   Property_URL: 'https://oss-manager.openpublish.io:8443/official_server',
   RPCUrl: 'HTTP://192.168.10.77:7545',
 
@@ -68,8 +68,8 @@ export default {
     let TOKEN = this.getStore('token')
     axios({
       method: 'GET',
-      url: this.Property_URL + url,
-      data: parameter,
+      url: this.Property_URL + url + '?' + parameter,
+      /* data: parameter, */
       timeout: 5000,
       headers: {
         "Content-Type": "application/json;charset=UTF-8",

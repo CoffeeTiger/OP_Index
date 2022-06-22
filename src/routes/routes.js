@@ -27,7 +27,7 @@ const routes = [
       component: () => import('../views/reward/index.vue')
     },
     {
-      path: '/airdrop',
+      path: '/airdrop/:id?',
       name: 'airdrop',
       component: () => import('../views/airdrop/index.vue')
     },

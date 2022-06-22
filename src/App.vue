@@ -61,7 +61,7 @@
   }
 </script>
 <style>
- @import url("assets/scss/com.css");
+  @import url("assets/scss/com.css");
 
   .main-content {
     /* max-width: var(--max-width); */

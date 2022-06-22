@@ -62,9 +62,9 @@ new Vue({
   render: h => h(App),
   router,
   i18n,
-  mounted() {
-    document.dispatchEvent(new event('render-event'))
-  }
+  // mounted() {
+  //   document.dispatchEvent(new event('render-event'))
+  // }
 });
 
 document.addEventListener('touchstart', function(event) {
