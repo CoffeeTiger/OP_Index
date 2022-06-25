@@ -2,13 +2,12 @@
   <div class="airdiop">
     <div class="aitdiop-head">
       <div class="aitdiop-head-title">OpenPublish<br /> Airdrop</div>
-      <div class="aitdiop-head-token">OpenPublish Airdrop is worth up to 9 OPH tokens (~$ 9). Share your referral link
-        to earn 1 OPH token (~$ 1)
-        for every referral, the referred friend will also earn 1 OPH token (~$ 1).</div>
+      <div class="aitdiop-head-token">OpenPublish is hosting a 10000 $ OPH airdrop! Only on June 25th - July 2nd
+        Special rewards up to 2000 $ OPH on July 3rd!</div>
       <div class="aitdiop-head-about">About OpenPublish</div>
-      <div class="aitdiop-head-connter">OpenPublish is the world’s first decentralized NFT Publisher. Our goal is to
+      <div class="aitdiop-head-connter">OpenPublish is the world's first decentralized NFT Publisher. Our goal is to
         build a high liquidity NFTs
-        market. Our expectation is to grow the value of the NFTs market, our platform revenue, and OPH’s market cap, not
+        market. Our expectation is to grow the value of the NFTs market, our platform revenue, and OPH's market cap, not
         only to provide benefits/rewards but also to create riches for our platform participants.</div>
     </div>
     <div class="aitdiop-btn">
@@ -27,25 +26,25 @@
         </div> -->
         <div class="aitdrop-list">
           <img class="airdiop-list-img2" src="../../assets/imgs/news/air-you.svg" />
-          Watch on <a href="https://www.youtube.com/c/Openpublish" target="_blank"> YouTube </a> +1
+          Watch on <a href="https://www.youtube.com/c/Openpublish" target="_blank"> YouTube </a> +1 $OPH
         </div>
         <div class="aitdrop-list">
           <img class="airdiop-list-img2" src="../../assets/imgs/news/air-twitter.svg" />
-          Follow on <a href="https://twitter.com/OpenPublishNFT" target="_blank">Twitter </a> +1
+          Follow on <a href="https://twitter.com/OpenPublishNFT" target="_blank">Twitter </a> +1 $OPH
         </div>
         <div class="aitdrop-list">
           <img class="airdiop-list-img2" src="../../assets/imgs/news/air-discord.svg" />
-          Join our <a href="https://discord.com/invite/openpublish" target="_blank"> Discord </a> server +5
+          Join our <a href="https://discord.com/invite/openpublish" target="_blank"> Discord </a> server +5 $OPH
         </div>
         <div class="aitdrop-list">
           <img class="airdiop-list-img2" src="../../assets/imgs/news/air-tg.svg" />
-          Join on <a href="https://t.me/openpublishTGcn" target="_blank"> Telegram </a> +2
+          Join on <a href="https://t.me/openpublishTG" target="_blank"> Telegram </a> +2 $OPH
         </div>
         <div class="icollapse imargin-bottom-24">
           <div :class="open1?'icollapse-title-contain':'icollapse-title-contain icollapse-title-contain-close'">
             <div class="icollapse-title" @click="listShow(1)">
               <img class="icollapse-img-i1" src="../../assets/imgs/news/air-niu.svg" />
-              <div class="ititle">Recommend to share with friends to participate in this event +1</div>
+              <div class="ititle">Recommend to share with friends to participate in this event +1 $OPH</div>
               <div class="iarrow-i1">
                 <img src="../../assets/imgs/arrow-down.png" class="icollepse-arrow" v-if="!open1" />
                 <img src="../../assets/imgs/arrow-up.png" class="icollepse-arrow" v-if="open1" />
@@ -210,7 +209,7 @@
         <div class="aitdiop-table-head">
           <div class="aitdiop-node-title">
             <img class="aitdiop-node-img" src="../../assets/imgs/news/air-jinbi.png">
-            <div class="aitdiop-node-d">Rewards by ranking on xx</div>
+            <div class="aitdiop-node-d">Rewards by ranking on July 3</div>
           </div>
           <table class="aitdiop-table" border="1">
             <tr class="airdiop-tr">
@@ -611,7 +610,7 @@
 
   .aitdiop-head-connter {
     font-size: 1.125rem;
-    font-family: PingFangSC-Regular, PingFang SC;
+    font-family: Poppins-Regular, Poppins;
     font-weight: 400;
     line-height: 2rem;
     margin-bottom: 2.875rem;
