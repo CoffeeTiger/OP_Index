@@ -617,13 +617,13 @@ select option:checked {
 }
 
 .itable thead th {
-  border-top: 1px solid #3F4142 !important;
-  border-bottom: 1px solid #3F4142 !important;
+  border-top: 0.142857rem solid #3F4142 !important;
+  border-bottom: 0.142857rem solid #3F4142 !important;
 }
 
 .itable td {
   border-top: 0px;
-  border-bottom: 1px solid #3F4142;
+  border-bottom: 0.142857rem solid #3F4142;
   padding-left: 0 !important;
   padding-right: 0 !important;
 }

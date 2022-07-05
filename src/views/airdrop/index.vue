@@ -209,9 +209,37 @@
         <div class="aitdiop-table-head">
           <div class="aitdiop-node-title">
             <img class="aitdiop-node-img" src="../../assets/imgs/news/air-jinbi.png">
-            <div class="aitdiop-node-d">Rewards by ranking on July 3</div>
+            <div class="aitdiop-node-d">Ranking reward announcement</div>
           </div>
-          <table class="aitdiop-table" border="1">
+          <table class="aitdiop-table" border="1" cellspacing="0">
+            <tr class="airdiop-tr">
+              <td class="airdiop-td"  style="padding-right: 4.0625rem;padding-left: 3.5rem;">Ranking</td>
+              <td class="airdiop-td" style="text-align: center;padding: 0rem 6.5rem;">Name</td>
+              <td class="airdiop-td" style="text-align: center;padding: 0rem 4.571429rem;">Award</td>
+            </tr>
+            <tr class="airdiop-tr">
+              <td class="airdiop-td">
+                <img src="../../assets/imgs/news/air-list1.svg" />1st Place
+              </td>
+              <td class="airdiop-td">GRAYCAT0913</td>
+              <td class="airdiop-td">2,000 OPH</td>
+            </tr>
+            <tr class="airdiop-tr">
+              <td class="airdiop-td">
+                <img src="../../assets/imgs/news/air-list2.svg" />2nd Place
+              </td>
+              <td class="airdiop-td">Cryptodanyyy</td>
+              <td class="airdiop-td">1,000 OPH</td>
+            </tr>
+            <tr class="airdiop-tr">
+              <td class="airdiop-td">
+                <img src="../../assets/imgs/news/air-list3.svg" />3rd Place
+              </td>
+              <td class="airdiop-td">Jews_didslavery</td>
+              <td class="airdiop-td">500 OPH</td>
+            </tr>
+          </table>
+          <!-- <table class="aitdiop-table" border="1">
             <tr class="airdiop-tr">
               <td class="airdiop-td" style="padding-right: 4.0625rem;padding-left: 3.5rem;">Ranking</td>
               <td class="airdiop-td2">Award</td>
@@ -262,7 +290,7 @@
               <td class="airdiop-td">1002th-5001th</td>
               <td class="airdiop-td2">$1</td>
             </tr>
-          </table>
+          </table> -->
           <div class="aitdiop-trumpet-down">
             <img src="../../assets/imgs/news/jinbi-1.png" />
           </div>
@@ -385,13 +413,12 @@
           youtube: that.youName.trim()
         }
         api.postAction('/unlogin/airdrop/submit-usernames', pars, function(res) {
-          if (res.success == true) {
+          if (res.success) {
             api.iToast(that, 'Submitted successfully', 'secondary')
-            that.modalShow = false
           } else {
             api.iToastServer(that, res.code, 'secondary')
-            that.modalShow = false
           }
+          that.modalShow = false
         })
       },
       onVerify() {
@@ -740,8 +767,9 @@
   }
 
   .aitdiop-table {
+    border-collapse:collapse;
+    border:none;
     width: 32.6875rem;
-    border: 0.125rem solid #3F4142 !important;
     margin-top: 1.5rem;
   }
 
@@ -758,7 +786,7 @@
     padding-left: 2rem;
     padding-right: 1.625rem;
     text-align: left;
-    border: 0.125rem solid #3F4142 !important;
+    border: 0.071429rem solid #3F4142 !important;
   }
 
   .airdiop-td>img {
@@ -774,8 +802,8 @@
 
 
   .airdiop-td2 {
-    text-align: left;
-    padding: 0 7rem;
+    text-align: center;
+  /*  padding: 0 7rem; */
     border: 0.125rem solid #3F4142 !important;
   }
 
