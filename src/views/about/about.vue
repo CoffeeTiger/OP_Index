@@ -66,7 +66,7 @@
             <a href="https://t.me/openpublishTGcn" target="_blank"><img src="../../assets/imgs/news/tg-1.svg" /></a>
             <a href="https://twitter.com/OpenPublishNFT" target="_blank"> <img
                 src="../../assets/imgs/news/Twitter-2.svg" /></a>
-            <a href="https://discord.gg/openpublish" target="_blank"><img
+            <a href="https://discord.gg/PGA5fY2BaD" target="_blank"><img
                 src="../../assets/imgs/news/Discord-2.svg" /></a>
             <a href="https://www.youtube.com/c/Openpublish"><img style="margin-right: 0px;"
                 src="../../assets/imgs/news/yb-2.svg" /></a>

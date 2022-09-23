@@ -7,7 +7,7 @@
         <div class="ishare">
           <a href="https://twitter.com/OpenPublishNFT" target="_blank"><img src="../../assets/imgs/home-top-tw.png" class="ishare-img"/></a>
           <a href="https://t.me/+YC_Eo3UDdZIzNGZk" target="_blank"><img src="../../assets/imgs/home-top-tg.png" class="ishare-img" /></a>
-          <a href="https://discord.gg/tKMbjCdVYf" target="_blank"><img src="../../assets/imgs/home-top-dis.png" class="ishare-img" /></a>
+          <a href="https://discord.gg/PGA5fY2BaD" target="_blank"><img src="../../assets/imgs/home-top-dis.png" class="ishare-img" /></a>
         </div>
         <div class="ilearn">
           <a href="https://wiki.openpublish.io" target="_blank">{{$t('page.learnmoreaboutOpenPublish')}}<b-icon icon="chevron-right" variant="Secondary"></b-icon></a>

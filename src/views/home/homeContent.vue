@@ -12,7 +12,9 @@
               class="ihome-share" /></a>
           <a href="https://twitter.com/OpenPublishNFT" target="_blank"><img src="../../assets/imgs/news/Twitter.svg"
               class="ihome-share" /></a>
-          <a href="https://discord.gg/openpublish" target="_blank"><img src="../../assets/imgs/news/xiaoren.svg"
+          <!-- <a href="https://discord.gg/openpublish" target="_blank"><img src="../../assets/imgs/news/xiaoren.svg"
+              class="ihome-share" /></a> -->
+          <a href="https://discord.gg/PGA5fY2BaD" target="_blank"><img src="../../assets/imgs/news/xiaoren.svg"
               class="ihome-share" /></a>
           <a href="https://www.youtube.com/c/Openpublish" target="_blank"><img src="../../assets/imgs/news/yb.svg"
               class="ihome-share" /></a>
